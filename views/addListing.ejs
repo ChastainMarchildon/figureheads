@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+
+
+    <div class="row flex-center">
+        <div class="sm-4 col">
+
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <form method="POST" action="/add">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" class="form-input" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea type="text-area" id="description" name="description" class="form-input"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imageUrl">Image</label>
+                            <input type="image" id="imageUrl" name="imageUrl" class="form-input">
+                        </div>
+
+                        <div class="form-group", style="display: none" >
+                            <label for="userID">ID</label>
+                            <input type="text" id="userID" name="userID" class="form-input" value="<%= user.id %>">
+                        </div>
+
+                        <button type="submit" class="btn-secondary btn-block">Add Listing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include partials/footer %>

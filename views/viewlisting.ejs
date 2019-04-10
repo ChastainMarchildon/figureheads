@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+
+<div class="hero hero-sm bg-dark" style="padding:30px;">
+  <h1><%= listing.title %></h1>
+</div>
+<div class="container">
+  <div class="columns">
+    <div class="column col-12">
+        <h3><%= listing.city %></h3>
+        <p><%= listing.description %></p>
+    </div>
+    <a href="/contact/<%= listing.userID %>">Contact Poster</a>
+  </div>
+</div>
+<% include partials/footer.ejs %>

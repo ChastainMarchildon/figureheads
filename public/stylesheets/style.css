@@ -1,0 +1,65 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1{
+  padding:0 1em;
+}
+
+.navbar .navbar-section{
+  background:#631c3a;
+  padding:20px;
+}
+
+.content-section{
+  padding:0 1em;
+}
+
+.container{
+  text-align:center;
+}
+
+.columns{
+  display: inline-block;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+  min-width:50%;
+}
+
+.hero{
+  text-align:center;
+}
+
+.label-error{
+  display:block;
+  text-align:center;
+  padding:15px;
+}
+
+.label-primary{
+  display:block;
+  text-align:center;
+  padding:15px;
+}
+
+#footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+
+#addListing{
+  position: fixed;
+  display: block;
+  background-color: #339933
+}
+
+.card{
+  display:inherit;
+}

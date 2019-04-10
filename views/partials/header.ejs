@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.8/spectre.min.css'/>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css'/>
+</head>
+<header class="navbar bg-primary">
+<body>
+    <section class="navbar-section">
+        <div class="navbar-brand mr-2">
+            <h3>
+                TestApp
+            </h3>
+        </div>
+
+            <a href="/listings" class="btn btn-link text-light">Listings</a>
+
+            <% if (user) { %>
+            <a href="/admin" class="btn btn-link text-light">Admin</a>
+            <% } %>
+                    
+            <% if (!user) { %> 
+                <a href="/register" class="btn btn-link text-light">Register</a>    
+                <a href="/login" class="btn btn-link text-light">Login</a>
+            <% } %>
+    </section>  
+        
+    <section class="navbar-section">       
+            <% if (user) { %>
+                 <a href="/logout" class="btn btn-link text-light">Logout</a>
+            <% } %>
+
+        <% if (user) { %>
+            <span class="badge success" style="float: right">
+                <%= user.username %>
+            </span>
+            <% } %>
+        </section>      
+    </header>

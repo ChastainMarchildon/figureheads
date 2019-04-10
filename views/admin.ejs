@@ -1,0 +1,57 @@
+<% include partials/header %>
+<div class="container">
+  <div class="hero hero-sm">
+    <div class="col-10 col">
+      <h1>
+        <%= title %>
+      </h1>
+    </div>
+  </div>
+
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>City</th>
+        <th>Description</th>
+        <th>ImageUrl</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for (let i = 0; i < listings.length; i++) { %>
+
+        <tr>
+          <td>
+            <%= listings[i].title %>
+          </td>
+          <td>
+            <%= listings[i].city %>
+          </td>
+          <td>
+            <%= listings[i].description %>
+          </td>
+          <td>
+            <%= listings[i].imageUrl %>
+          </td>
+          <td>
+            <a href="/admin/edit/<%= listings[i]._id %>" class="btn btn-default">Edit</a>
+          </td>
+          <td>
+            <a href="/admin/delete/<%= listings[i]._id %>" class="btn btn-default" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+          </td>
+        </tr>
+
+        <% } %>
+    </tbody>
+  </table>
+  <div class="column">
+      <p>
+        <a href="/add" class="btn btn-primary" id="addListing">Add Listing</a>
+      </p>
+    </div>
+</div>
+  <% include partials/footer %>
