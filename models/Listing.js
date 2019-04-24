@@ -9,36 +9,41 @@ const listingSchema = new mongoose.Schema({
     required: 'Please enter Listing title',
   },
   city: {
+    type: String
+  },
+  category:{
     type: String,
-    required: 'Please enter City',
+    required: 'Please enter a category'
   },
   description:{
     type: String,
     required: 'Please enter a brief description'
   },
-  postingDetails:{
-    type:String,
-    required: 'Please enter the body of the posting'
-  },
   userID:{
     type: String,
     required: 'Must be associated with a user'
+  },
+  date:{
+    type: String
+  },
+  tags:{
+    type: String
   }
 });
 
-/*   Code used for images later
+
 // before it is saved, it will run this function
+/*
 listingSchema.pre('save', function (next) {
   // ! must use 'function' above so 'this' refers to correct object
-  // get year from last 4 characters of imageUrl
-  this.year = this.imageUrl.substr(-4);
+  // turn datepicker datetime into a reader friendly format
+  //const indexOfT = this.date.lastIndexOf('T');
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  this.date = this.date.toLocaleDateString("en-US", options);
   next();
 });
-
-listingSchema.methods.lastUrl = function () {
-  const indexOfSlash = this.imageUrl.lastIndexOf('/');
-  return this.imageUrl.substring(indexOfSlash + 1);
-};
 */
+
+
 
 module.exports = mongoose.model('Listing', listingSchema);

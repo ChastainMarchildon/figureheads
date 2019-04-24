@@ -1,0 +1,40 @@
+<% include partials/header %>
+<div class="container">
+        <div class="hero hero-sm">
+          <div class="col-10 col">
+            <h1>
+              <%= title %>
+            </h1>
+          </div>
+        </div>
+      
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Portfolio</th>
+            </tr>
+          </thead>
+          <tbody>
+      
+            <% for (let i = 0; i < users.length; i++) { %>
+      
+              <tr>
+                <td>
+                  <%= users[i].name %>
+                </td>
+                <td>
+                  <a href="<%= users[i].portfolioLink %>"><%= users[i].portfolioLink %></a>
+                </td>
+      
+              <% } %>
+          </tbody>
+        </table>
+        <div class="column">
+            <p>
+              <a href="/add" class="btn btn-primary" id="addListing">Add Listing</a>
+            </p>
+          </div>
+      </div>
+<% include partials/footer %>

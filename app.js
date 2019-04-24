@@ -18,6 +18,13 @@ const app = express();
 
 const mongoose = require('mongoose');
 
+/*
+const esClient = new elasticsearch.Client({
+  host: '127.0.0.1:9200',
+  log: 'error'
+});
+*/
+
 mongoose.connect(process.env.DATABASE);
 
 // view engine setup

@@ -5,14 +5,27 @@ const authController = require('../controllers/authController');
 const passport = require('passport');
 const nodemailer = require('nodemailer')
 
+var UserRouteStrategy = {
+  home: listingController.admin
+};
+
+var AdminRouteStrategy = {
+  home: userController.photoAdmin
+};
+
 const router = express.Router();
+
 
 /* GET home page. */
 router.get('/', listingController.homePage);
 
 router.get('/listings', listingController.getListings);
+router.get('/categoryListings/:category', listingController.getCategories);
 
-router.get('/admin', authController.isLoggedIn, listingController.admin);
+//redirects the user to admin page based on what type of profile they have
+router.get('/admin', authController.isLoggedIn,(req, res, next) => {
+  req.routeStrategy.admin(req, res, next);
+});
 router.get('/admin/delete/:id', listingController.deleteListing);
 router.get('/admin/edit/:id', listingController.editListing);
 router.post('/admin/edit/:id', listingController.updateListing);
@@ -23,17 +36,24 @@ router.post('/add', authController.isLoggedIn, listingController.createListing);
 router.get('/register', userController.registerForm);
 router.post('/register', userController.register, authController.login);
 
+router.get('/gethired', userController.photoRegisterForm);
+router.post('/gethired', userController.registerPhotographer, authController.login);
+
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 
 router.get('/viewlisting/:id', listingController.viewListing);
 
-router.get('/contact/:id',listingController.contact);
+router.get('/contact/:id',authController.isLoggedIn,listingController.contact);
+
+router.get('/photographers', userController.getPhotographers);
+router.post('/admin/editPhotographer/:id', userController.updatePhotographer);
 
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/listings');
 });
+
 
 
 router.post('/contact/send',(req,res)=>{

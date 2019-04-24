@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div class="container">
+  <div class="hero hero-sm">
+    <div class="col-10 col">
+      <h1>
+        <%= title %>
+        THIS IS THE PHOTO ADMIN
+      </h1>
+    </div>
+  </div>
+
+  <div class="row flex-center">
+      <div class="sm-4 col">
+
+          <div class="card" style="width: 20rem;">
+              <div class="card-body">
+                  <form method="POST">
+                      <div class="form-group">
+                          <label for="portfolioLink">Portfolio Link</label>
+                          <input type="text" id="portfolioLink" name="portfolioLink" class="form-input">
+                      </div>
+                      <button type="submit" class="btn-secondary btn-block">Save Changes</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <% include partials/footer %>

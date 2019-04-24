@@ -1,5 +1,6 @@
 const Listing = require('../models/Listing');
 const User = require('../models/User');
+const Category = require('../models/Categories');
 const url = require('url');
 
 exports.homePage = (req, res) => {
@@ -25,7 +26,7 @@ exports.admin = async (req, res) => {
   const listings = await Listing.find({userID: req.user.id}).sort({ title: 'asc' });
 
   res.render('admin', {
-    title: 'Admin',
+    title: 'Your Listings',
     listings,
     user: req.user,
   });
@@ -43,6 +44,7 @@ exports.addListing = (req, res) => {
 exports.createListing = async (req, res) => {
   try {
     const listing = new Listing(req.body);
+    console.log(listing);
     await listing.save();
     res.redirect('/listings');
   } catch (err) {
@@ -81,8 +83,6 @@ exports.editListing = (req, res) => {
 
 exports.updateListing = (req, res) => {
   // get year from last 3 characters of imageUrl
-  req.body.year = req.body.imageUrl.substr(-4);
-
   Listing.update({ _id: req.params.id }, req.body, (err) => {
     if (err) {
       console.log(err);
@@ -109,11 +109,11 @@ exports.viewListing = (req,res) =>{
 };
 
 exports.contact = (req,res,next) =>{
-  const contact = User.findById({_id:req.params.id});
 
   User.findById({_id:req.params.id},(err,user) =>{
     if(err){
       console.log(err);
+      res.redirect('/login');
     } else{
       res.render('contact',{
       title:'Contact Poster',
@@ -124,4 +124,22 @@ exports.contact = (req,res,next) =>{
     }
   });
 };
+
+exports.getCategories = (req, res) => { 
+  Listing.find({category:req.params.category},(err,listings) => {
+    if (err) {
+      res.render('error');
+    } else {
+      res.render('categoryListings', {
+        title:'Results for ' + req.params.category,
+        listings,
+        user: req.user,
+      });
+    }
+  })
+};
+
+
+
+
 

@@ -1,0 +1,25 @@
+<form method="get" action="/categoryListings" id="myform" class="filterBar">   
+    <div class="dropdown">
+        <a href="#" class="btn btn-primary dropdown-toggle" tabindex="0">
+            Filter by Tag <i class="icon icon-caret"></i>
+        </a> 
+            <ul class="menu">
+                <!-- menu header text -->
+                <li class="divider">
+                </li>
+                <!-- menu item standard -->
+  
+                <div class="dropdown">
+                        <div class="btn-group">
+                                <% var categories =["Wedding","Corporate","Automotive","Cosplay","Portrait","Holidays","Product & Promotional","Social Media","Other"]
+                                for (let i = 0; i < categories.length; i++) { %>
+                          <a href="/categoryListings/<%= categories[i] %>" class="btn" id="category" name="category" >
+                           <%= categories[i] %>
+                          </a>
+                          <% } %>
+  
+                        </div>
+                    </div>
+            </ul>
+    </div>
+  </form>

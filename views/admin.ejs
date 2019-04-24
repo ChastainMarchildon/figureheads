@@ -15,7 +15,7 @@
         <th>Title</th>
         <th>City</th>
         <th>Description</th>
-        <th>ImageUrl</th>
+        <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -35,8 +35,8 @@
             <%= listings[i].description %>
           </td>
           <td>
-            <%= listings[i].imageUrl %>
-          </td>
+              <%= listings[i].category %>
+            </td>
           <td>
             <a href="/admin/edit/<%= listings[i]._id %>" class="btn btn-default">Edit</a>
           </td>
