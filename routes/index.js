@@ -4,6 +4,9 @@ const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const passport = require('passport');
 const nodemailer = require('nodemailer')
+const http = require("http");
+const path = require("path");
+const fs = require("fs");
 
 var UserRouteStrategy = {
   home: listingController.admin
@@ -46,7 +49,7 @@ router.get('/viewlisting/:id', listingController.viewListing);
 
 router.get('/contact/:id',authController.isLoggedIn,listingController.contact);
 
-router.get('/photographers', userController.getPhotographers);
+router.get('/photographers', userController.getPhotographers, userController.getProfilePictures);
 router.post('/admin/editPhotographer/:id', userController.updatePhotographer);
 
 router.get('/logout', (req, res) => {
@@ -55,7 +58,7 @@ router.get('/logout', (req, res) => {
 });
 
 
-
+/**Code for handling emails and contact forms */
 router.post('/contact/send',(req,res)=>{
   //Gets the information from the contact form and inserts it into an email
   const output = `<p>You have a new message</p>
@@ -98,6 +101,63 @@ router.post('/contact/send',(req,res)=>{
                       user: req.user
                     });
               });
+});
+
+
+
+/** Code for handling image saving and rendering */
+
+const multer = require("multer");
+
+const handleError = (err, res) => {
+  res
+    .status(500)
+    .contentType("text/plain")
+    .end("Oops! Something went wrong!");
+};
+
+const upload = multer({
+  dest: "/public/images"
+});
+
+
+router.post(
+  "/uploadProfilePicture",
+  upload.single("file" /* name attribute of <file> element in your form */),
+  (req, res) => {
+    const tempPath = req.file.path;
+    const userID = req.body.userID;
+    const targetPath = path.join(__dirname, "../uploads/" + userID + ".png");
+
+    if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+      fs.rename(tempPath, targetPath, err => {
+        if (err) {
+          console.log(targetPath);
+          return handleError(err, res);
+        }
+        
+        console.log(req.body);
+        res.redirect('/admin');
+      });
+    } else {
+      fs.unlink(tempPath, err => {
+        if (err) {
+          return handleError(err, res);
+        }
+
+        res
+          .status(403)
+          .contentType("text/plain")
+          .end("Only .png files are allowed!");
+      });
+    }
+  }
+);
+
+router.get("/image.png", (req, res) => {
+  const userImage = req.body
+  console.log(userImage);
+  res.sendFile(path.join(__dirname, "../uploads/image.png"));
 });
 
 

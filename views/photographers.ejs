@@ -22,7 +22,10 @@
       
               <tr>
                 <td>
-                  <%= users[i].name %>
+                    <img src="/images/<%= users[i]._id %>.png" style="max-height:100px; max-width:100px;" />
+                </td>
+                <td>
+                    <%= users[i].name %>
                 </td>
                 <td>
                   <a href="<%= users[i].portfolioLink %>"><%= users[i].portfolioLink %></a>
@@ -31,10 +34,5 @@
               <% } %>
           </tbody>
         </table>
-        <div class="column">
-            <p>
-              <a href="/add" class="btn btn-primary" id="addListing">Add Listing</a>
-            </p>
-          </div>
       </div>
 <% include partials/footer %>

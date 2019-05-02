@@ -1,7 +1,9 @@
 const passport = require('passport');
 const User = require('../models/User');
-const Image = require('../models/Image');
+const Grid = require('gridfs-stream');
 const fs = require('fs');
+
+
 
 exports.photoRegisterForm = (req, res) => {
   res.render('gethired', {
@@ -28,16 +30,13 @@ exports.registerForm = (req, res) => {
 };
 
 exports.registerPhotographer = (req, res, next) => {
+
   const user = new User({
     username: req.body.username, 
     name:req.body.name,
     portfolioLink : req.body.portfolio, 
     photographer : req.body.photographer, 
   });
-
-  const profilePicture = new Image
-    profilePicture.img.data = fs.readFileSync(req.body.profilePicture);
-    profilePicture.img.contentType = 'image/png';
 
   User.register(user,profilePicture,req.body.password, (err, account) => {
     if (err) {
@@ -96,6 +95,10 @@ exports.getPhotographers = (req, res) => {
     }
   });
 };
+
+exports.getProfilePictures  = (req, res) => {
+  res.sendFile(path.join(__dirname, "../uploads/"+ req.user._id + ".png"));
+}
 
 exports.updatePhotographer = (req, res) => {
   User.update({ _id: req.params.id }, req.body, (err) => {

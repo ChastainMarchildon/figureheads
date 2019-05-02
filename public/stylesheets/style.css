@@ -7,7 +7,6 @@
 html, body{ height:100%; margin:0; }
 footer{ height:50px; }
 
-/* Trick */
 body{ 
   display:flex; 
   flex-direction:column; 
@@ -28,12 +27,17 @@ a {
   color: #00B7FF;
 }
 
+a.text-light:hover{
+  color:slateblue;
+}
+
 h1{
   padding:0 1em;
+  
 }
 
 .navbar .navbar-section{
-  background:#631c3a;
+  background:#303742;
   padding:20px;
 }
 
@@ -42,18 +46,19 @@ h1{
 }
 
 .container{
+  
   text-align:center;
 }
 
 .columns{
   display: inline-block;
-  background-color: #e8e8e8;
   border-radius: 5px;
   min-width:50%;
 }
 
 .hero{
-  text-align:center;
+
+  text-align: center;
 }
 
 .label-error{
@@ -77,6 +82,7 @@ h1{
 
 .card{
   display:inherit;
+
 }
 
 .bootstrap-tagsinput {
@@ -105,7 +111,7 @@ h1{
 
 .filterBar{
   display: inline-block;
-  padding: 1em;
+  margin-left:2em;
 }
 
 #category{

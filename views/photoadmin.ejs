@@ -4,14 +4,34 @@
     <div class="col-10 col">
       <h1>
         <%= title %>
-        THIS IS THE PHOTO ADMIN
       </h1>
     </div>
   </div>
 
+  <!--
   <div class="column">
       <p>
         <a href="/admin/editPhotographer/<%= user._id %>" class="btn btn-primary" id="editPhotographer">edit</a>
       </p>
-    </div>
+  </div>
+  -->
+
+  <div class="container">
+      <div class="columns">
+              <div class="card" style="width: 20rem;" style="align-items:center;">
+                  <div class="card-body">
+                      <form method="post" enctype="multipart/form-data" action="/uploadProfilePicture">
+                        <div class="form-group">
+                            <label for="file">Upload a Profile Picture</label>
+                          </div>
+                          <div>
+                            <input type="file" name="file">
+                            <input type="text" value="<%= user._id %>" name="userID" style="display: none;"/>
+                          <input type="submit" value="Submit">
+                        </div>
+                      </form>
+                  </div>
+              </div>
+      </div>
+  </div>
   <% include partials/footer %>
