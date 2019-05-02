@@ -106,6 +106,7 @@ router.post('/contact/send',(req,res)=>{
 
 
 /** Code for handling image saving and rendering */
+/*
 
 const multer = require("multer");
 
@@ -123,7 +124,7 @@ const upload = multer({
 
 router.post(
   "/uploadProfilePicture",
-  upload.single("file" /* name attribute of <file> element in your form */),
+  upload.single("file"),
   (req, res) => {
     const tempPath = req.file.path;
     const userID = req.body.userID;
@@ -159,7 +160,6 @@ router.get("/image.png", (req, res) => {
   console.log(userImage);
   res.sendFile(path.join(__dirname, "../uploads/image.png"));
 });
-
-
+*/
 
 module.exports = router;
