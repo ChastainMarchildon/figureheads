@@ -25,7 +25,7 @@ const esClient = new elasticsearch.Client({
 });
 */
 
-mongoose.connect(process.env.DATABASE);
+mongoose.connect('mongodb://Chastain:ed210a@ds151970.mlab.com:51970/node1');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +44,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-    secret: process.env.SECRET,
+    secret: 'SALT',
     resave: true,
     saveUninitialized: false
   }));
