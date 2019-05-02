@@ -10,6 +10,7 @@ footer{ height:50px; }
 body{ 
   display:flex; 
   flex-direction:column; 
+  background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));
 }
 
 footer{
@@ -33,11 +34,12 @@ a.text-light:hover{
 
 h1{
   padding:0 1em;
-  
+  color:white;
 }
 
 .navbar .navbar-section{
-  background:#303742;
+  background:none;
+  /*background:#303742;*/
   padding:20px;
 }
 
