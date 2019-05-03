@@ -33,7 +33,7 @@ a.text-light:hover{
 }
 
 h1{
-  padding:0 1em;
+  padding:0 .7em;
   color:white;
 }
 
@@ -63,6 +63,10 @@ h1{
   text-align: center;
 }
 
+label{
+  color:white;
+}
+
 .label-error{
   display:block;
   text-align:center;
@@ -84,8 +88,14 @@ h1{
 
 .card{
   display:inherit;
-
+  background-image: linear-gradient(rgb(35, 30, 51),rgb(38, 33, 56));
+  color:white;
 }
+
+.card-footer{
+  color:white;
+}
+
 
 .bootstrap-tagsinput {
   background-color: #fff;
@@ -118,4 +128,13 @@ h1{
 
 #category{
   width:100%;
+}
+
+.dropdown-toggle{
+  margin-left:5px;
+}
+
+.listing-card{
+  color:rgb(41, 38, 58);
+  background:white;
 }
