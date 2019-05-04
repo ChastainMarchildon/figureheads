@@ -1,6 +1,6 @@
 <% include partials/header.ejs %>
 
-<div class="hero hero-sm bg-dark" style="padding:30px;">
+<div class="hero hero-sm" style="padding:30px;">
   <h1><%= listing.title %></h1>
 </div>
 <div class="container">
@@ -10,7 +10,7 @@
         <h3>Date of Event: <%= listing.date %></h3>
         <p><%= listing.description %></p>
     </div>
-    <a href="/contact/<%= listing.userID %>">Contact Poster</a>
+    <a href="/contact/<%= listing.userID %>" class="listing-link">Contact Poster</a>
   </div>
 </div>
 <% include partials/footer.ejs %>

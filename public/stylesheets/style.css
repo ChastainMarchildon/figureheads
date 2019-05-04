@@ -24,8 +24,12 @@ footer{
 }
 */
 
-a {
-  color: #00B7FF;
+.listing-link{
+  color: purple !important;
+}
+
+a :visited{
+  color:#807fe2
 }
 
 a.text-light:hover{
@@ -56,6 +60,10 @@ h1{
   display: inline-block;
   border-radius: 5px;
   min-width:50%;
+}
+
+.column{
+  color:white;
 }
 
 .hero{
