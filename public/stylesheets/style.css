@@ -25,11 +25,11 @@ footer{
 */
 
 .listing-link{
-  color: purple !important;
+  color: purple; 
 }
 
-a :visited{
-  color:#807fe2
+.listing-link :visited{
+  color:#807fe2;
 }
 
 a.text-light:hover{
@@ -67,7 +67,7 @@ h1{
 }
 
 .hero{
-
+  padding:2rem;
   text-align: center;
 }
 
@@ -185,3 +185,9 @@ label{
 		transform: translate3d(0, 0, 0);
 	}
 }
+
+.badge{
+  background-color: #807fe2;
+  color:white;
+}
+
