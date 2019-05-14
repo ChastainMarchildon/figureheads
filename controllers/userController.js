@@ -109,3 +109,18 @@ exports.updatePhotographer = (req, res) => {
     }
   });
 };
+
+exports.viewProfile = (req,res) =>{
+  User.findById({ _id: req.params.id},(err, user) =>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('viewprofile', {
+        title: 'Profile',
+        user,
+        isActive: 'admin',
+        user: req.user,
+      });
+    }
+  });
+};

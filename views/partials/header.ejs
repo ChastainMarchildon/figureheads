@@ -24,7 +24,7 @@
             <a href="/photographers" class="btn btn-link text-light">Our Photographers</a>
 
             <% if (user) { %>
-            <a href="/admin" class="btn btn-link text-light">Admin</a>
+            <a href="/admin" class="btn btn-link text-light">Your Account</a>
             <% } %>
             
                 
@@ -38,6 +38,7 @@
             <% } %>   
             <% if (user) { %>
                  <a href="/logout" class="btn btn-link text-light">Logout</a>
+                 <a href="/viewprofile/<%= user._id %>" class="btn btn-link text-light">Profile Settings</a>
             <% } %>
 
         <% if (user) { %>

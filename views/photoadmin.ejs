@@ -1,7 +1,7 @@
 <% include partials/header %>
 <div class="container">
   <div class="hero hero-sm">
-    <div class="col-10 col">
+    <div>
       <h1>
         <%= title %>
       </h1>
@@ -22,7 +22,22 @@
                   <div class="card-body">
                       <form method="post" enctype="multipart/form-data" action="/uploadProfilePicture">
                         <div class="form-group">
-                            <label for="file">Upload a Profile Picture, currently not aavailable due to Heroku hosting</label>
+                            <label for="file">Upload a Profile Picture, currently not available due to Heroku hosting</label>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="emailAlert">Select which categories you would like email alerts for</label>
+                            <div>
+                            <select multiple>
+                              <option>Weddings</option>
+                              <option>Corporate</option>
+                              <option>Products / Promotional</option>
+                              <option>Events</option>
+                              <option>Automotive</option>
+                              <option>Cosplay</option>
+                              <option>Portrait</option>
+                            </select>
+                          </div>
                           </div>
                           
                       </form>

@@ -44,6 +44,7 @@ router.post('/gethired', userController.registerPhotographer, authController.log
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
+router.get('/viewprofile/:id', userController.viewProfile);
 
 router.get('/viewlisting/:id', listingController.viewListing);
 
