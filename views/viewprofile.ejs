@@ -1,2 +1,22 @@
 <% include partials/header %>
+<h1 class=" hero">
+    <%= title %>
+</h1>
+
+<div class="container">
+    <div class="columns">
+            <div class="card" style="width: 20rem;" style="align-items:center;">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="username">Email Address</label>
+                            <input type="text" id="username" name="username" class="form-input" value="<%= user.username %>">
+                        </div>
+
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 <% include partials/footer %>

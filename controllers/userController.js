@@ -124,3 +124,14 @@ exports.viewProfile = (req,res) =>{
     }
   });
 };
+
+
+exports.updateProfile = (req, res) => {
+  User.update({ _id: req.params.id }, req.body, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/admin');
+    }
+  });
+};
