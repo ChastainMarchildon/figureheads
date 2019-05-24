@@ -27,11 +27,11 @@
           </h4>
 
           <h5 class="card-subtitle">
-              <%= listings[i].city %>
+            Location: <%= listings[i].city %>
           </h5>
 
           <h5 class="card-subtitle">
-              <%= listings[i].date %>
+             Event Date: <%= listings[i].date %>
           </h5>
 
           <h5 class="card-subtitle">
@@ -49,6 +49,9 @@
           <% if (user && user.photographer == "Yes") { %>
             <a href="/viewListing/<%= listings[i]._id %>" class="listing-link">View Full Listing</a>
           <%}%>
+          <% if(!user) { %>
+            <a href="/gethired" class="listing-link">View Full Listing</a>
+          <% } %>
         </div>
       </div>
       </div>

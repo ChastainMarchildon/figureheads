@@ -135,3 +135,10 @@ exports.updateProfile = (req, res) => {
     }
   });
 };
+
+exports.forgotPassword = (req, res) => {
+  res.render('forgot', {
+    user: req.user,
+    title: 'Forgot Password'
+  });
+};

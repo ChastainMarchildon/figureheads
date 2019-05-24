@@ -109,7 +109,6 @@ exports.viewListing = (req,res) =>{
 };
 
 exports.contact = (req,res,next) =>{
-
   User.findById({_id:req.params.id},(err,user) =>{
     if(err){
       console.log(err);
