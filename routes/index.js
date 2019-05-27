@@ -16,6 +16,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', listingController.homePage);
+router.get('/subscribe', listingController.homePage);
 
 router.get('/listings', listingController.getListings);
 router.get('/categoryListings/:category', listingController.getCategories);

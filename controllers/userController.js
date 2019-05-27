@@ -29,6 +29,14 @@ exports.registerForm = (req, res) => {
   });
 };
 
+exports.subscribe = (req, res) => {
+  res.render('subscribe', {
+    title: 'Subscribe as a Photographer',
+    warning: '',
+    user: req.user,
+  });
+};
+
 exports.registerPhotographer = (req, res, next) => {
 
   const user = new User({
@@ -38,7 +46,7 @@ exports.registerPhotographer = (req, res, next) => {
     photographer : req.body.photographer, 
   });
 
-  User.register(user,profilePicture,req.body.password, (err, account) => {
+  User.register(user,req.body.password, (err, account) => {
     if (err) {
       console.log(err);
       // needed to say 'return' below otherwise node will complain that headers already sent.

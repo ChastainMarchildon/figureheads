@@ -15,7 +15,7 @@ function stripeCheckout(){
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://localhost:3000/listings',
+      successUrl: 'https://fotio.herokuapp.com/gethired',
       cancelUrl: 'https://your-website.com/canceled',
     })
     .then(function (result) {
