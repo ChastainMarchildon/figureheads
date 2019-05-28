@@ -1,6 +1,6 @@
 
 function stripeCheckout(){
-  const stripe = Stripe('pk_test_KtoZqH7idkT9anePS9XkRk7D');
+  const stripe = Stripe('pk_live_RHnRzb3urR9p7w026yXtSTcS');
   console.log('here');
   //const checkoutButton = document.getElementById('checkout-button-plan_F99sURKqZZKMVs');
   //checkoutButton.addEventListener('click', function () {
@@ -16,7 +16,7 @@ function stripeCheckout(){
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
       successUrl: 'https://fotio.herokuapp.com/gethired',
-      cancelUrl: 'https://your-website.com/canceled',
+      cancelUrl: 'https://fotio.herokuapp.com/error',
     })
     .then(function (result) {
       if (result.error) {
