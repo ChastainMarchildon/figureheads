@@ -47,6 +47,7 @@ router.post('/viewprofile/:id', userController.updateProfile);
 router.get('/viewlisting/:id', listingController.viewListing);
 
 router.get('/contact/:id',authController.isLoggedIn,listingController.contact);
+router.get('/contactUs', userController.contactUs);
 
 router.get('/photographers', userController.getPhotographers, userController.getProfilePictures);
 router.post('/admin/editPhotographer/:id', userController.updatePhotographer);

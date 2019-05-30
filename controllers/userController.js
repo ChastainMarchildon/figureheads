@@ -150,3 +150,10 @@ exports.forgotPassword = (req, res) => {
     title: 'Forgot Password'
   });
 };
+
+exports.contactUs = (req,res,next) =>{
+  res.render('contactUs',{
+      title:'Contact Us',
+      user:req.user
+  });
+};
