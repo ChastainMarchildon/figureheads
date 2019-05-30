@@ -117,6 +117,7 @@ exports.contact = (req,res,next) =>{
       res.render('contact',{
       title:'Contact Poster',
       email: user.username,
+      phoneNumber: user.phoneNumber,
       //Passing req.user will only show a user in the nav if they were logged in previously
       user: req.user
       });

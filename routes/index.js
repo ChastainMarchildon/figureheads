@@ -76,7 +76,7 @@ router.get('/reset/:token', function(req, res) {
 /**Code for handling emails and contact forms */
 router.post('/contact/send',(req,res)=>{
   //Gets the information from the contact form and inserts it into an email
-  const output = `<p>You have a new message</p>
+  const output = `<p>A photographer from Fotio.ca has sent you a message!</p>
                   <h3>Contact Details</h3>
                   <ul>
                     <li>Name: ${req.body.name}</li>
@@ -87,21 +87,25 @@ router.post('/contact/send',(req,res)=>{
                   <p>${req.body.message}</p>`;
 
   let transporter = nodemailer.createTransport({
-                    host: 'smtp.gmail.com',
-                    port: 587,
+                    host: 'mail.privateemail.com',
+                    //port:25,
+                    //port:465,
+                    port:587,
+                    //port: 25,
                     secure: false,  
-                    service:'gmail',
+                    //service:'gmail',
                     auth: {
-                        user: 'chastainrgm@gmail.com', 
-                        pass: 'hususeyrzagvizjr' 
+                        user: 'support@fotio.ca', 
+                        pass: 'a5516coca33'
+                        //pass: 'hususeyrzagvizjr' 
                     }
                 });
             
                 // setup email data with unicode symbols
   let mailOptions = {
-                    from: '"Test App" <chastainrgm@gmail.com>', 
+                    from: '"Fotio" <support@fotio.ca>', 
                     to: req.body.posterEmail, 
-                    subject: 'Message from your Test App',  
+                    subject: 'A new message from a photographer at Fotio.ca',  
                     html: output // inserts the contact info and message into the email
                 };       
   transporter.sendMail(mailOptions, (error, info) => {
@@ -149,26 +153,33 @@ router.post('/forgot', function(req, res, next) {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
+        host: 'mail.privateemail.com',
+        //port:25,
+        //port:465,
+        port:587,
+        //port: 25,
         secure: false,  
-        service:'gmail',
+        //service:'gmail',
         auth: {
-            user: 'chastainrgm@gmail.com', 
-            pass: 'hususeyrzagvizjr' 
+            user: 'support@fotio.ca', 
+            pass: 'a5516coca33'
+            //pass: 'hususeyrzagvizjr' 
         }
     });
       var mailOptions = {
         to: user.username,
-        from: 'fotiosite@gmail.com',
-        subject: 'Node.js Password Reset',
+        from: 'support@fotio.ca',
+        subject: 'Fotio.ca Password Reset',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        //req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+        res.render('resetConfirmation',{
+          title:"Email Confirmed",
+          user: req.user
+        });
         done(err, 'done');
       });
     }
@@ -198,18 +209,22 @@ router.post('/reset/:token', function(req, res) {
   },
     function(user, done) {
       var smtpTransport = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
+        host: 'mail.privateemail.com',
+        //port:25,
+        //port:465,
+        port:587,
+        //port: 25,
         secure: false,  
-        service:'gmail',
+        //service:'gmail',
         auth: {
-            user: 'chastainrgm@gmail.com', 
-            pass: 'hususeyrzagvizjr' 
+            user: 'support@fotio.ca', 
+            pass: 'a5516coca33'
+            //pass: 'hususeyrzagvizjr' 
         }
     });
       var mailOptions = {
         to: user.username,
-        from: 'fotiosite@gmail.com',
+        from: 'support@fotio.ca',
         subject: 'Your password has been changed',
         text: 'Hello,\n\n' +
           'This is a confirmation that the password for your account ' + user.username + ' has just been changed.\n'

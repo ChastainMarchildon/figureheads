@@ -61,7 +61,7 @@ exports.registerPhotographer = (req, res, next) => {
 };
 
 exports.register = (req, res, next) => {
-  const user = new User({ username: req.body.username, name:req.body.name });
+  const user = new User({ username: req.body.username, name:req.body.name, phoneNumber:req.body.phoneNumber });
 
   User.register(user, req.body.password, (err, account) => {
     if (err) {

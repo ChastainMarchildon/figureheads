@@ -5,12 +5,16 @@
 </div>
 <div class="container">
   <div class="columns">
-    <div class="column col-12">
-        <h3><%= listing.city %></h3>
-        <h3>Date of Event: <%= listing.date %></h3>
-        <p><%= listing.description %></p>
+    <div class="card">
+      <div class="column col-12">
+          <h3>Location: <%= listing.city %></h3>
+          <h3>Date of Event: <%= listing.date %></h3>
+          <p><%= listing.description %></p>
+      </div>
+      <div class="card-footer">
+        <a href="/contact/<%= listing.userID %>">Contact Poster</a>
+      </div>
     </div>
-    <a href="/contact/<%= listing.userID %>">Contact Poster</a>
   </div>
 </div>
 <% include partials/footer.ejs %>

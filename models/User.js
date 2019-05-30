@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
     profilePicture:{
       type: { data: Buffer, contentType: String }
     },
+    phoneNumber:{
+      type: String
+    },
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });

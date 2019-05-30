@@ -2,19 +2,17 @@
   <div class="container">
     <h1 class="brand"><span>Contact</span> Poster</h1>
     <div class="wrapper animated bounceInLeft">
-      <div class="company-info">
-          <h3>Poster Info</h3>
-        <ul>
-          <li><i class="fa fa-road"></i> ######</li>
-          <li><i class="fa fa-phone"></i> ######</li>
-          <li><i class="fa fa-envelope"></i> <%= email %></li>
-        </ul>
-      </div>
       <div class="contact">
         <form method="POST" action="send">
             <div class="container">
                 <div class="columns">
+                  <div class="card" style="width:50%">
                     <div class="column col-xl-12">
+                        <h3>Poster Info</h3>
+                        <ul>
+                          <li><i class="fa fa-phone"></i>Phone: <%= phoneNumber %></li>
+                          <li><i class="fa fa-envelope"></i>Email: <%= email %></li>
+                        </ul>
                         <p>
                             <label>Name</label>
                             <input type="text" name="name" class="form-input">
@@ -35,9 +33,10 @@
                             <input type="text" value="<%= email %>" style="display: none;" name="posterEmail"/>
                         </p>
                         <p class="full">
-                            <button type="submit">Submit</button>
+                            <button type="submit" class="button button-small">Submit</button>
                         </p>
                     </div>
+                  </div>
                 </div>
             </div>
         </form>
