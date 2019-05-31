@@ -12,7 +12,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th></th>
+              <!--<th></th>-->
               <th>Name</th>
               <th>Portfolio</th>
             </tr>
@@ -22,9 +22,11 @@
             <% for (let i = 0; i < users.length; i++) { %>
       
               <tr>
+                <!-- pics broken atm
                 <td>
                     <img src="/images/<%= users[i]._id %>.png" style="max-height:100px; max-width:100px;" />
                 </td>
+                -->
                 <td>
                     <%= users[i].name %>
                 </td>
