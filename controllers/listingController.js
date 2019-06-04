@@ -1,5 +1,6 @@
 const Listing = require('../models/Listing');
 const User = require('../models/User');
+const Blog = require('../models/Blog');
 const Category = require('../models/Categories');
 const url = require('url');
 
@@ -20,18 +21,6 @@ exports.getListings = (req, res) => {
     }
   });
 };
-
-exports.admin = async (req, res) => {
-  // use listing model to query db for listing data
-  const listings = await Listing.find({userID: req.user.id}).sort({ title: 'asc' });
-
-  res.render('admin', {
-    title: 'Your Listings',
-    listings,
-    user: req.user,
-  });
-};
-
 
 
 exports.addListing = (req, res) => {
@@ -137,6 +126,68 @@ exports.getCategories = (req, res) => {
       });
     }
   })
+};
+
+
+exports.admin = async (req, res) => {
+  // use listing model to query db for listing data
+  const listings = await Listing.find({userID: req.user.id}).sort({ title: 'asc' });
+
+  res.render('admin', {
+    title: 'Your Listings',
+    listings,
+    user: req.user,
+  });
+};
+
+
+/**Blog functions **************************************************************************************************************/
+exports.getBlogList = (req, res) => {
+  Blog.find((err, blogs) => {
+    if (err) {
+      res.render('error');
+    } else {
+      res.render('blogList', {
+        title: 'Fotio Blog',
+        blogs,
+        user: req.user,
+      });
+    }
+  });
+};
+
+exports.viewBlogPost = (req,res) =>{
+  Blog.findById({ _id: req.params.id},(err, blog) =>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('viewBlogPost', {
+        title: blog.title,
+        blog,
+        isActive: 'admin',
+        user: req.user,
+      });
+    }
+  });
+};
+
+
+exports.addBlog = (req, res) => {
+  res.render('addBlog', {
+    title: 'Add Blog',
+    user: req.user,
+  });
+};
+
+exports.createBlog = async (req, res) => {
+  try {
+    const blog = new Blog(req.body);
+    console.log(blog);
+    await blog.save();
+    res.redirect('/blogList');
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 

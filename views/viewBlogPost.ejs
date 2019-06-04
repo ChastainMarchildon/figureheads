@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+
+<div class="hero hero-sm" style="padding:30px;">
+  <h1><%= blog.title %></h1>
+</div>
+<div class="container">
+  <div class="columns">
+    <div class="card" style="min-width:50%">
+      <div class="column col-12">
+          <p><%= blog.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% include partials/footer.ejs %>
