@@ -44,6 +44,7 @@ exports.registerPhotographer = (req, res, next) => {
     name:req.body.name,
     portfolioLink : req.body.portfolio, 
     photographer : req.body.photographer, 
+    instagram : req.body.instagram,
   });
 
   User.register(user,req.body.password, (err, account) => {

@@ -4,7 +4,14 @@
 }
 */
 
-html, body{ height:100%; margin:0; }
+
+html, body{ 
+  height:99%; 
+  margin:0; 
+  overflow-x: initial !important;
+}
+
+
 footer{ height:50px; }
 
 body{ 
@@ -16,13 +23,6 @@ body{
 footer{
   margin-top:auto; 
 }
-/*#footer{
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-}
-*/
 
 .listing-link{
   color: purple; 
@@ -49,6 +49,10 @@ h1{
 
 .content-section{
   padding:0 1em;
+}
+
+.info-pane{
+  font-size: 25px;
 }
 
 .container{
@@ -147,6 +151,8 @@ label{
   background:white;
 }
 
+/**** Landing Page Stuff *********************/
+
 .js-nametag{
   display:inline-block;
   
@@ -172,7 +178,7 @@ label{
 	animation-delay: 4s;
 }
 .js-nametag:nth-child(6) {
-	animation-delay: 4s;
+  animation-delay: 4s;
 }
 
 @keyframes fadeIn {
@@ -186,8 +192,68 @@ label{
 	}
 }
 
+
+.section-scroll{
+  height:50vh;
+  width: 100%;
+  padding:6em;
+  box-sizing: border-box;
+  color:white;
+
+}
+
+/********************* ********************** Might be too much
+.module-border-wrap {
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+  padding: 3px;
+  animation: hue 60s infinite linear;
+}
+*/
+/*
+section:nth-of-type(1){background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));}
+section:nth-of-type(2){background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));}
+*/
+section:nth-of-type(1){background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));}
+section:nth-of-type(2){background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));}
+
+[data-scroll]{
+  transition: all 2s;
+}
+
+[data-scroll="in"]{
+  opacity:1;
+  transform: translateX(0);
+}
+
+[data-scroll="out"]{
+  opacity:0;
+  transform: translateX(-200px);
+}
+
 .badge{
   background-color: #807fe2;
   color:white;
+}
+
+.colorTransform {
+  color: #f35626;
+  background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 60s infinite linear;
+}
+
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(-360deg);
+  }
 }
 

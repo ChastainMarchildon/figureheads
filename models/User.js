@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema({
     photographer:{
         type: String
       },
+    instagram:{
+      type: String
+    },
     profilePicture:{
       type: { data: Buffer, contentType: String }
     },
