@@ -47,7 +47,7 @@ router.post('/viewprofile/:id', userController.updateProfile);
 router.get('/viewlisting/:id', listingController.viewListing);
 
 router.get('/blogList', listingController.getBlogList);
-router.get('/blogPost/:id', listingController.viewBlogPost);
+router.get('/viewBlogPost/:id', listingController.viewBlogPost);
 router.get('/addBlog', authController.isLoggedIn, listingController.addBlog);
 router.post('/addBlog', authController.isLoggedIn, listingController.createBlog);
 
