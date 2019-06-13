@@ -11,18 +11,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="https://js.stripe.com/v3"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <meta name="title" content="Fotio Photography Website">
+    <meta name="description" content="Photography website helping professional photographers find clients, and clients post jobs for events such as weddings, family pictures, special events and more.">
+    <meta name="keywords" content="Photography, photographers, weddings, wedding photography, family pictures, family photography, freelance, corporate, promotional photography, photography website">
 </head>
 <header class="navbar" id="site-header">
 <body class="home">
     <section class="navbar-section">
         <div class="navbar-brand mr-2 logo">
+            <a href="/">
             <img src="/images/navlogonew.png"/>
+            </a>
         </div>
 
             <a href="/listings" class="btn btn-link text-light">Listings</a>
-            <a href="/photographers" class="btn btn-link text-light">Our Photographers</a>
+            <!--<a href="/photographers" class="btn btn-link text-light">Our Photographers</a>  No point in using this right now --> 
             <a href="/blogList" class="btn btn-link text-light">Blog</a>
 
             <% if (user) { %>

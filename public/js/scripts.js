@@ -22,8 +22,8 @@ function stripeCheckout(){
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://fotio.herokuapp.com/gethired',
-      cancelUrl: 'https://fotio.herokuapp.com/error',
+      successUrl: 'https://fotio.ca/gethired',
+      cancelUrl: 'https://fotio.ca/error',
     })
     .then(function (result) {
       if (result.error) {

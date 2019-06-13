@@ -10,6 +10,7 @@ const User = require('../models/User');
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
+const sendEmail = require('../public/js/send-email');
 
 const router = express.Router();
 
@@ -36,7 +37,7 @@ router.get('/register', userController.registerForm);
 router.post('/register', userController.register, authController.login);
 
 router.get('/gethired', userController.photoRegisterForm);
-router.post('/gethired', userController.registerPhotographer, userController.newUser, authController.login);
+router.post('/gethired', userController.registerPhotographer,userController.newUser, authController.login);
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
@@ -47,7 +48,7 @@ router.post('/viewprofile/:id', userController.updateProfile);
 router.get('/viewlisting/:id', listingController.viewListing);
 
 router.get('/blogList', listingController.getBlogList);
-router.get('/blogPost/:id', listingController.viewBlogPost);
+router.get('/viewBlogPost/:id', listingController.viewBlogPost);
 router.get('/addBlog', authController.isLoggedIn, listingController.addBlog);
 router.post('/addBlog', authController.isLoggedIn, listingController.createBlog);
 
