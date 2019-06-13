@@ -157,3 +157,51 @@ exports.contactUs = (req,res,next) =>{
       user:req.user
   });
 };
+
+exports.newUser = (req,res) =>{
+  res.post('/gethired',(req,res)=>{
+    //Gets the information from the contact form and inserts it into an email
+    const output = `<p>A new photographer subscribed</p>
+                    <h3>Contact Details</h3>
+                    <ul>
+                      <li>Name: ${req.body.name}</li>
+                      <li>Email: ${req.body.email}</li>
+                      <li>Phone Number: ${req.body.phone}</li>
+                    </ul>`;
+  
+    let transporter = nodemailer.createTransport({
+                      host: 'mail.privateemail.com',
+                      //port:25,
+                      //port:465,
+                      port:587,
+                      //port: 25,
+                      secure: false,  
+                      //service:'gmail',
+                      auth: {
+                          user: 'support@fotio.ca', 
+                          pass: 'a5516coca33'
+                          //pass: 'hususeyrzagvizjr' 
+                      }
+                  });
+              
+                  // setup email data with unicode symbols
+    let mailOptions = {
+                      from: '"Fotio" <support@fotio.ca>', 
+                      to: req.body.posterEmail, 
+                      subject: 'A new subscriber at Fotio.ca',  
+                      html: output // inserts the contact info and message into the email
+                  };       
+    transporter.sendMail(mailOptions, (error, info) => {
+                      if (error) {
+                          return console.log(error);
+                      }
+                      console.log('Message sent: %s', info.messageId);
+                      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  
+                      res.render('sent',{
+                        title:"Email Confirmed",
+                        user: req.user
+                      });
+                });
+  });
+}

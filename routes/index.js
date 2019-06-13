@@ -36,7 +36,7 @@ router.get('/register', userController.registerForm);
 router.post('/register', userController.register, authController.login);
 
 router.get('/gethired', userController.photoRegisterForm);
-router.post('/gethired', userController.registerPhotographer, authController.login);
+router.post('/gethired', userController.registerPhotographer, userController.newUser, authController.login);
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
@@ -67,7 +67,7 @@ router.get('/forgot', userController.forgotPassword);
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
-      req.flash('error', 'Password reset token is invalid or has expired.');
+      //req.flash('error', 'Password reset token is invalid or has expired.');
       return res.redirect('/forgot');
     }
     res.render('reset', {
@@ -127,7 +127,7 @@ router.post('/contact/send',(req,res)=>{
               });
 });
 
-/**Forgot password mail code */
+/**Forgot password mail code *********************************************************************************/
 
 router.post('/forgot', function(req, res, next) {
   async.waterfall([
