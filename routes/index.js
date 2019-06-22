@@ -11,6 +11,7 @@ const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const sendEmail = require('../public/js/send-email');
+const cloudinary = require('cloudinary').v2;
 
 const router = express.Router();
 
@@ -56,7 +57,9 @@ router.get('/contact/:id',authController.isLoggedIn,listingController.contact);
 router.get('/contactUs', userController.contactUs);
 
 router.get('/photographers', userController.getPhotographers, userController.getProfilePictures);
+router.get('/admin/editPhotographer/:id', userController.editPhotographer);
 router.post('/admin/editPhotographer/:id', userController.updatePhotographer);
+router.get('/portfolio/:id',userController.getPortfolio);
 
 router.get('/logout', (req, res) => {
   req.logout();

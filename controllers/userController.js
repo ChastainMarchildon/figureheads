@@ -3,6 +3,7 @@ const User = require('../models/User');
 const Grid = require('gridfs-stream');
 const fs = require('fs');
 const sendEmail = require('../public/js/send-email');
+const cloudinary = require('cloudinary').v2;
 
 
 
@@ -106,6 +107,21 @@ exports.getPhotographers = (req, res) => {
   });
 };
 
+exports.editPhotographer = (req, res) => {
+  User.findById({ _id: req.params.id }, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('editPhotographer', {
+        title: 'Edit Setting',
+        user,
+        isActive: 'admin',
+        user: req.user,
+      });
+    }
+  });
+};
+
 exports.getProfilePictures  = (req, res) => {
   res.sendFile(path.join(__dirname, "../uploads/"+ req.user._id + ".png"));
 }
@@ -167,3 +183,23 @@ exports.newUser = (req,res,next) =>{
     user:req.user
   })
 }
+
+
+/*****************************************************Portfolio Controls */
+
+exports.getPortfolio = (req,res) =>{
+  User.findById({ _id: req.params.id},(err, user) =>{
+    if (err) {
+      console.log(err);
+    } else {
+      images = cloudinary.image(user._id +".json", {type: "list"});
+      res.render('portfolio', {
+        title: 'Portfolio',
+        images,
+        user,
+        isActive: 'admin',
+        user: req.user,
+      });
+    }
+  });
+};

@@ -8,23 +8,23 @@
     </div>
   </div>
 
-  <!--
   <div class="column">
       <p>
         <a href="/admin/editPhotographer/<%= user._id %>" class="btn btn-primary" id="editPhotographer">edit</a>
       </p>
+      <p>
+          <a href="portfolio/<%= user._id %>" class="btn btn-primary" id="portfolio">Portfolio</a>
+        </p>
   </div>
-  -->
 
   <div class="container">
       <div class="columns">
               <div class="card" style="width: 20rem;" style="align-items:center;">
                   <div class="card-body">
-                      <form method="post" enctype="multipart/form-data" action="/uploadProfilePicture">
                         <div class="form-group">
                             <label for="file">Email subscriptions, portfolio hosting and more coming soon.</label>
                           </div>
-
+                          <button class="button" onclick="uploadArea('<%= user._id %>');">Upload to your Portfolio</button>
                           <!--
                           <div class="form-group">
                             <label for="emailAlert">Select which categories you would like email alerts for</label>
@@ -41,8 +41,6 @@
                           </div>
                           -->
                         </div>
-                          
-                      </form>
                   </div>
               </div>
       </div>

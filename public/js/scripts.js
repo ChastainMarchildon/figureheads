@@ -34,3 +34,20 @@ function stripeCheckout(){
       } 
     });
 }
+
+function uploadArea(userId){
+  var widget = cloudinary.createUploadWidget({ 
+    cloudName: "dryhb9oao", 
+    uploadPreset: "vhf4r1m9" ,
+    folder:userId,
+    tags:[userId]
+  }, (error, result) => { });
+  widget.open();
+}
+
+function buildImageLink(userName){
+  const imageLinks = [];
+  cloudinary.image(userName +".json", {type: "list"});
+  //const response = res.cloudinary.com/dryhb9oao/image/list/userName.json
+  console.log(response);
+}

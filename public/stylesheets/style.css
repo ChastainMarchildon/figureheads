@@ -4,24 +4,57 @@
 }
 */
 
+a:hover{
+  background: -webkit-gradient(linear,left top,right top,from(#b2f5fa),to(#baf0b8));
+  background: linear-gradient(to right,#d918f3,#baf0b8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-shadow: none;
+}
+
+
+/***** SCROLL BAR SETTINGS **********/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(178, 220, 240), rgb(159, 225, 245));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgb(178, 220, 240), #d918f3);
+}
+
 
 html, body{ 
-  height:99%; 
+  height:100%; 
   margin:0; 
   overflow-x: initial !important;
 }
 
 
-footer{ height:50px; }
+footer{ 
+  height:50px;
+  margin-top:auto; 
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+ }
 
 body{ 
   display:flex; 
   flex-direction:column; 
-  background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));
-}
-
-footer{
-  margin-top:auto; 
+  /*background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));*******DARK*****/
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
 }
 
 .listing-link{
@@ -38,7 +71,8 @@ a.text-light:hover{
 
 h1{
   padding:0 .7em;
-  color:white;
+  /*color:white; *****DARK*/
+  color:black;
 }
 
 .navbar .navbar-section{
@@ -48,6 +82,7 @@ h1{
 }
 
 .content-section{
+  flex-wrap: inherit;
   padding:0 1em;
 }
 
@@ -56,7 +91,6 @@ h1{
 }
 
 .container{
-  
   text-align:center;
 }
 
@@ -67,7 +101,8 @@ h1{
 }
 
 .column{
-  color:white;
+  /*color:white; ****DARK***/
+  color:black;
 }
 
 .hero{
@@ -76,7 +111,8 @@ h1{
 }
 
 label{
-  color:white;
+  /*color:white; ***DARK*/
+  color:black;
 }
 
 .label-error{
@@ -100,12 +136,17 @@ label{
 
 .card{
   display:inherit;
+  /*************DARK
   background-image: linear-gradient(rgb(35, 30, 51),rgb(38, 33, 56));
   color:white;
+  */
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+  color:black;
 }
 
 .card-footer{
-  color:white;
+  /*color:white;*/
+  color:black;
 }
 
 
@@ -198,15 +239,19 @@ label{
   width: 100%;
   padding:6em;
   box-sizing: border-box;
+  /*****DARK
   color:white;
   background-image: linear-gradient(to bottom, rgb(15,14,23),rgb(16,14,23));
+  */
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+  color:black;
 }
 
 
 .module-border-wrap {
   padding: 1rem;
   position: relative;
-  background: linear-gradient(to right, red, purple);
+  background: linear-gradient(to right, rgb(178, 220, 240), rgb(159, 225, 245));
   padding: 3px;
   
 }

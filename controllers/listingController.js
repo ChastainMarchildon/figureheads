@@ -9,7 +9,7 @@ exports.homePage = (req, res) => {
 };
 
 exports.getListings = (req, res) => {
-  Listing.find((err, listings) => {
+  Listing.find().sort({date: -1}).exec((err, listings) => {
     if (err) {
       res.render('error');
     } else {

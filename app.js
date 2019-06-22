@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('dotenv').config({ path: 'variables.env' });
 const bodyParser = require('body-parser');
-
+const cloudinary = require('cloudinary').v2;
 
 const passport = require('passport');
 const session = require('express-session');
@@ -87,6 +87,12 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   console.log(err);
   res.render('error', { title: err.message });
+});
+
+cloudinary.config({ 
+  cloud_name: 'dryhb9oao', 
+  api_key: '851842436812732', 
+  api_secret: 'QPqVWM_hFVErga_MtNKblkzZG3c' 
 });
 
 module.exports = app;
