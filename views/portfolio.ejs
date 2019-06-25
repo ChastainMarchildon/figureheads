@@ -3,10 +3,12 @@
     <%= title %>
 </h1>
 <div class="header-section" id="header-section">
-    <% if(user.instagram.length > 1) { %>
-    <a href="<%=user.instagram %>"><img src="/images/instalink.png"></a>
-    <% } %>
-    <p class="js-nametag portfolioInfo"><%= user.username %></p>
+    <div class="card">
+        <% if(user.instagram.length > 1) { %>
+        <a href="<%=user.instagram %>"><img src="/images/instalink.png"></a>
+        <% } %>
+        <p class="js-nametag portfolioInfo"><%= user.username %></p>
+    </div>
 </div>
 <div class="container">
     <section class="content-section" id="content-section"></section>

@@ -4,15 +4,28 @@
 }
 */
 
+/*********************Navbar settings ****************************/
+
 a:hover{
   background: -webkit-gradient(linear,left top,right top,from(#b2f5fa),to(#baf0b8));
-  background: linear-gradient(to right,#d918f3,#baf0b8) !important;
+  background: linear-gradient(to right,#ef1060,#f8b5e2) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   text-shadow: none;
 }
+
+.navbar-section{
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
+}
+
+.btn-link{
+  font-size: 1rem;
+}
+
+
 
 
 /***** SCROLL BAR SETTINGS **********/
@@ -79,7 +92,17 @@ h1{
   height:100%;
 }
 
+/***************************************************************************LISTINGS PAGE STUFF***************************************************************************************/
+.header-breadcrumbs{
+  font-weight:900 !important;
+}
+
 /**********************************************************************   Header Titles  ******************************/
+
+.btn-link{
+  text-decoration:blue
+}
+
 .listings-title{
   height:150px;
   background:linear-gradient(to top, rgba(255,255,255,0) 20%,
