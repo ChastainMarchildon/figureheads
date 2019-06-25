@@ -17,7 +17,7 @@ exports.photoRegisterForm = (req, res) => {
 
 exports.photoAdmin = (req, res) => {
   res.render('photoadmin', {
-    title: 'Photo Admin',
+    title: 'Account Management',
     warning: '',
     user: req.user,
   });
@@ -186,7 +186,7 @@ exports.newUser = (req,res,next) =>{
 
 
 /*****************************************************Portfolio Controls */
-
+/**Uses cloudinary image link list to generate a json list of images uploaded wioth a users id as a tag */
 exports.getPortfolio = (req,res) =>{
   User.findById({ _id: req.params.id},(err, user) =>{
     if (err) {
@@ -194,7 +194,7 @@ exports.getPortfolio = (req,res) =>{
     } else {
       images = cloudinary.image(user._id +".json", {type: "list"});
       res.render('portfolio', {
-        title: 'Portfolio',
+        title: user.name + ' Portfolio',
         images,
         user,
         isActive: 'admin',

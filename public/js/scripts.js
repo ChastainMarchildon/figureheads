@@ -45,9 +45,75 @@ function uploadArea(userId){
   widget.open();
 }
 
-function buildImageLink(userName){
-  const imageLinks = [];
-  cloudinary.image(userName +".json", {type: "list"});
-  //const response = res.cloudinary.com/dryhb9oao/image/list/userName.json
-  console.log(response);
+
+/*** Builds an image link by recieving the URL from the controller. This parses the JSON response of that URL, extracting only whats needed to appeand to the image link, then builds an img tag */
+function buildImageLink(url){
+  lastIndex = url.lastIndexOf('\'');
+  const newUrl = url.substring(10,lastIndex);
+  fetch(newUrl)
+  .then(res => res.json())
+  .then(function(myJson) {
+    for (var i = 0; i < myJson.resources.length; i++) {
+      var imageResource = myJson.resources[i];
+      const src='https://res.cloudinary.com/dryhb9oao/image/upload/v1561217109/'+imageResource.public_id +'.'+imageResource.format
+      if(i!=1){
+        $("section.content-section").append("<a href='" + src + "'><img class='card' style='width:550px; height:800px; display:inline-block;' src=" + src +'></a>');
+      }
+      else{
+        var sheet = document.createElement('style')
+        sheet.innerHTML = ".header-section{background-image: url('"+ src + "')}";
+        $("section").append(sheet);
+      }
+    }
+  });
+}
+
+function homePageCarousel(){
+  $(document).ready(function () {
+    //Weddings
+    setTimeout(function () {
+        $("#indexCarousel").css({
+          'background-image':'url("https://images.unsplash.com/photo-1459501462159-97d5bded1416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")',
+          'background-size': 'cover',
+          'background-position': 'center',
+          'animation': 'fadeIn',
+        });
+      }, 100),
+    //Portraits
+    setTimeout(function () {
+      $("#indexCarousel").css({
+        'background-image':'url("https://images.unsplash.com/photo-1528914457842-1af67b57139d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'animation': 'fadeIn',
+      });
+     }, 990),
+  //Events
+    setTimeout(function () {
+      $("#indexCarousel").css({
+        'background-image':'url("https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'animation': 'fadeIn',
+      });
+    }, 1990),
+//Modelling
+    setTimeout(function () {
+      $("#indexCarousel").css({
+        'background-image':'url("https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80")',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'animation': 'fadeIn',
+      });
+    }, 2990),
+//More
+    setTimeout(function () {
+      $("#indexCarousel").css({
+        'background-image':'url("https://images.unsplash.com/photo-1491479054185-c06893fca10a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'animation': 'fadeIn',
+      });
+     }, 3990);
+});
 }

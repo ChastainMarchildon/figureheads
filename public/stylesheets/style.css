@@ -47,7 +47,7 @@ html, body{
 footer{ 
   height:50px;
   margin-top:auto; 
-  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+  /*background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));*/
  }
 
 body{ 
@@ -75,6 +75,30 @@ h1{
   color:black;
 }
 
+.container{
+  height:100%;
+}
+
+/**********************************************************************   Header Titles  ******************************/
+.listings-title{
+  height:150px;
+  background-image: url('https://images.unsplash.com/photo-1495512046360-dad6e8b83667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.register-title{
+  background-image: url('https://images.unsplash.com/photo-1505166065723-bae088a12fc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80') !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.login-title{
+  background-image: url('https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') !important;
+  background-size: cover;
+  background-position: center;
+}
+
 .navbar .navbar-section{
   background:none;
   /*background:#303742;*/
@@ -91,6 +115,7 @@ h1{
 }
 
 .container{
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
   text-align:center;
 }
 
@@ -125,6 +150,10 @@ label{
   display:block;
   text-align:center;
   padding:15px;
+}
+
+.badge{
+  background:#5755d9 !important;
 }
 
 
@@ -192,7 +221,11 @@ label{
   background:white;
 }
 
-/**** Landing Page Stuff *********************/
+.form-input{
+  background:#edf3ff;
+}
+
+/**** Landing Page Stuff                                                  *********************/
 
 .js-nametag{
   display:inline-block;
@@ -220,6 +253,17 @@ label{
 }
 .js-nametag:nth-child(6) {
   animation-delay: 4s;
+}
+
+#indexCarousel{
+  border-radius:5px;
+  animation: fadeIn 1s ease-in both;
+}
+
+#titleWrapper{
+  background: rgba(255, 255, 255, 0.5);
+  padding:10px;
+  display:inline-block;
 }
 
 @keyframes fadeIn {
@@ -299,5 +343,20 @@ section:nth-of-type(2){background-image: linear-gradient(to bottom, rgb(15,14,23
   to {
     filter: hue-rotate(-360deg);
   }
+}
+
+
+
+/********************************************************************Portfolio Page Styles */
+.header-section{
+  display:inline-block;
+  min-height:35%;
+  background-size: cover;
+  background-position: center;
+}
+
+.portfolioInfo{
+  opacity:0.5;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
 }
 

@@ -1,5 +1,15 @@
 <% include partials/header %>
-<% for (let i = 0; i < images.length; i++) { %>
-    <%= images[i]%>
-    <%}%>
+<h1>
+    <%= title %>
+</h1>
+<div class="header-section" id="header-section">
+    <% if(user.instagram.length > 1) { %>
+    <a href="<%=user.instagram %>"><img src="/images/instalink.png"></a>
+    <% } %>
+    <p class="js-nametag portfolioInfo"><%= user.username %></p>
+</div>
+<div class="container">
+    <section class="content-section" id="content-section"></section>
+</div>
+    <script>buildImageLink("<%-images%>");</script>
 <% include partials/footer %>

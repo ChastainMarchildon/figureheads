@@ -1,18 +1,23 @@
 <% include partials/header %>
   <h1>
     <div class="container">
-      <div>
-        <h2>Welcome to Fotio.</h2>
-        <p>We connect Photographers to clients for...</p>
-        <div id="banner-container">
-            <p class="js-nametag">Weddings,</p>
-            <p class="js-nametag">Portraits,</p>
-            <p class="js-nametag">Events,</p>
-            <p class="js-nametag">Modelling</p>
-            <p class="js-nametag">And More.</p>
-        </div>
+      <div id="indexCarousel">
+        <div id="titleWrapper">
+          <h2>Welcome to Fotio.</h2>
+        <div>
+          <script>homePageCarousel();</script>
+          <p>We connect Photographers to clients for...</p>
+          <div id="banner-container">
+              <p class="js-nametag">Weddings,</p>
+              <p class="js-nametag">Portraits,</p>
+              <p class="js-nametag">Events,</p>
+              <p class="js-nametag">Modelling</p>
+              <p class="js-nametag">And More.</p>
+          </div>
       </div>
-    </h1>
+    </div>
+    </div>
+  </h1>
 
     <div class="module-border-wrap" data-scroll>
       <section class="section-scroll" data-scroll>
@@ -30,7 +35,8 @@
 </div>
 <script>
   ScrollOut({
-    
+
   });
 </script>
+</div>
   <% include partials/footer %>
