@@ -113,7 +113,7 @@ exports.editPhotographer = (req, res) => {
       console.log(err);
     } else {
       res.render('editPhotographer', {
-        title: 'Edit Setting',
+        title: 'Edit Account Settings',
         user,
         isActive: 'admin',
         user: req.user,

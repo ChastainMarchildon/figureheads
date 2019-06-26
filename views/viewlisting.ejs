@@ -3,14 +3,16 @@
 <div class="hero hero-sm" style="padding:30px;">
   <h1><%= listing.title %></h1>
 </div>
-<div class="container">
+<div class="container view-listing-body">
   <div class="columns">
     <div class="card listing-card" style="min-width:50%">
-      <div class="column col-12">
-          <h3>Location: <%= listing.city %></h3>
-          <h3>Date of Event: <%= listing.date %></h3>
-          <p><%= listing.description %></p>
-      </div>
+      <div class="card-body">
+        <div>
+            <h3>Location: <%= listing.city %></h3>
+            <h3>Date of Event: <%= listing.date %></h3>
+            <p><%= listing.description %></p>
+        </div>
+    </div>
       <div class="card-footer">
         <a href="/contact/<%= listing.userID %>">Contact Poster</a>
       </div>

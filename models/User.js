@@ -18,11 +18,17 @@ const userSchema = new mongoose.Schema({
     instagram:{
       type: String
     },
+    facebook:{
+      type: String
+    },
     profilePicture:{
       type: { data: Buffer, contentType: String }
     },
     phoneNumber:{
       type: String
+    },
+    description:{
+      type:String
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date

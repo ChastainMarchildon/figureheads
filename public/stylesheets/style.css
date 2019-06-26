@@ -92,6 +92,11 @@ h1{
   height:100%;
 }
 
+.card-body{
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
+}
+
 /***************************************************************************LISTINGS PAGE STUFF***************************************************************************************/
 .header-breadcrumbs{
   font-weight:900 !important;
@@ -106,7 +111,7 @@ h1{
 .listings-title{
   height:150px;
   background:linear-gradient(to top, rgba(255,255,255,0) 20%,
-  rgba(250,250,250,1)), url('https://images.unsplash.com/photo-1495512046360-dad6e8b83667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  rgba(250,250,250,1)), url('https://images.unsplash.com/photo-1503847003563-6819dd01382b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
   background-size: cover;
   background-position: center;
 }
@@ -119,6 +124,12 @@ h1{
 
 .login-title{
   background-image: url('https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.view-listing-body{
+  background-image: url('https://images.unsplash.com/photo-1476169785137-3bfe32e30ee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') !important;
   background-size: cover;
   background-position: center;
 }
@@ -249,7 +260,7 @@ label{
   background:#edf3ff;
 }
 
-/**** Landing Page Stuff                                                  *********************/
+/**** Landing Page Stuff               ****************************************************************************************************/
 
 
 
@@ -321,7 +332,7 @@ label{
 .module-border-wrap {
   padding: 1rem;
   position: relative;
-  background: linear-gradient(to right, rgb(178, 220, 240), rgb(159, 225, 245));
+  background: linear-gradient(to right,#ef1060,#f8b5e2);
   padding: 3px;
   
 }
@@ -383,6 +394,6 @@ section:nth-of-type(2){background-image: linear-gradient(to bottom, rgb(15,14,23
 
 .portfolioInfo{
   opacity:0.5;
-  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+  line-height: 0% !important;
 }
 

@@ -109,7 +109,7 @@ function homePageCarousel(){
 //More
     setTimeout(function () {
       $("#indexCarousel").css({
-        'background-image':'url("https://images.unsplash.com/photo-1491479054185-c06893fca10a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")',
+        'background-image':'url("https://images.unsplash.com/photo-1481923387198-050ac1a2896e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80")',
         'background-size': 'cover',
         'background-position': 'center',
         'animation': 'fadeIn',

@@ -3,11 +3,20 @@
     <%= title %>
 </h1>
 <div class="header-section" id="header-section">
-    <div class="card">
-        <% if(user.instagram.length > 1) { %>
-        <a href="<%=user.instagram %>"><img src="/images/instalink.png"></a>
-        <% } %>
-        <p class="js-nametag portfolioInfo"><%= user.username %></p>
+    <div class="card" style="width: 20rem;" id="titleWrapper">
+        <div class="card-body" >
+            <p class="js-nametag portfolioInfo">Email: <%= user.username %></p><br>
+            <p class="js-nametag portfolioInfo">Phone Number: <%= user.phoneNumber %></p><br>
+            <% if(user.description.length > 1) { %>
+                <p><%= user.description %></p>
+            <% } %>
+            <% if(user.instagram.length > 1) { %>
+                <a href="<%=user.instagram %>"><img src="/images/instalink.png" style="height:45px; width:30px;"></a>
+            <% } %>
+            <% if(user.facebook.length > 1) { %>
+                <a href="<%=user.facebook %>"><img src="/images/facebooklink.png" style="height:45px; width:30px;"></a>
+            <% } %>
+        </div>
     </div>
 </div>
 <div class="container">
