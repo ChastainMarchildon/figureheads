@@ -105,7 +105,7 @@ function homePageCarousel(){
         'background-position': 'center',
         'animation': 'fadeIn',
       });
-    }, 2),
+    }, 2900),
 //More
     setTimeout(function () {
       $("#indexCarousel").css({

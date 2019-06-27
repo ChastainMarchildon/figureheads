@@ -22,6 +22,7 @@ a:hover{
 }
 
 .btn-link{
+  font-family: 'Vollkorn SC', serif !important;
   font-size: 1rem;
 }
 
@@ -83,6 +84,7 @@ a.text-light:hover{
 }
 
 h1{
+  font-family: 'Vollkorn SC', serif !important; 
   padding:0 .7em;
   /*color:white; *****DARK*/
   color:black;
@@ -276,13 +278,8 @@ label{
 /**** Landing Page Stuff               ****************************************************************************************************/
 
 
-
-.js-nametag{
-  display:inline-block;
-  
-}
-
 .js-nametag {
+  display:inline-block;
 	text-align: center;
 	line-height: 100px;
 	opacity: 0;
