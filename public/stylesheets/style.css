@@ -86,6 +86,9 @@ h1{
   padding:0 .7em;
   /*color:white; *****DARK*/
   color:black;
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
+  margin-bottom:auto !important;
 }
 
 .container{
@@ -98,8 +101,14 @@ h1{
 }
 
 /***************************************************************************LISTINGS PAGE STUFF***************************************************************************************/
-.header-breadcrumbs{
-  font-weight:900 !important;
+.listings-container{
+  height:100%;
+  background:url("https://images.unsplash.com/photo-1517463770931-7529a204f94a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1407&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
 }
 
 /**********************************************************************   Header Titles  ******************************/
@@ -143,6 +152,10 @@ h1{
 .content-section{
   flex-wrap: inherit;
   padding:0 1em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem;
 }
 
 .info-pane{
@@ -293,14 +306,18 @@ label{
 }
 
 #indexCarousel{
-  border-radius:5px;
+  float:right;
+  height: 100vh;
+  max-width: 100vw;
   animation: fadeIn 1s ease-in both;
+  overflow:hidden;
 }
 
 #titleWrapper{
   background: rgba(255, 255, 255, 0.5);
   padding:10px;
-  display:inline-block;
+  top:50%;
+  text-align:center;
 }
 
 @keyframes fadeIn {
@@ -395,5 +412,115 @@ section:nth-of-type(2){background-image: linear-gradient(to bottom, rgb(15,14,23
 .portfolioInfo{
   opacity:0.5;
   line-height: 0% !important;
+}
+
+
+/********************************************Polaroid Effect ***********************************************/
+
+.wrapper {
+  width: 70%;
+  padding: 0 1rem;
+  text-align: center;
+}
+.polaroid {
+  min-height:350px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 1px -6px 28px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 1px -6px 28px -4px rgba(0,0,0,0.75);
+  box-shadow: inset 1px -6px 28px -4px rgba(0,0,0,0.75);  
+  
+}
+.polaroid > .listing-details{
+  min-height:250px;
+  color:whitesmoke;
+  margin:auto;
+  text-align:center;
+  background:black;
+  max-width: 70%;
+  height: 75%;
+}
+.caption {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 2em;
+}
+.item {
+  width: 30%;
+  display: inline-block;
+  margin-top: 2rem;
+  filter: grayscale(100%);
+}
+.item .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) {
+  transform: scale(0.8, 0.8) rotate(5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+1) .polaroid:before {
+  transform: rotate(6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+2) {
+  transform: scale(0.8, 0.8) rotate(-5deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+2) .polaroid:before {
+  transform: rotate(-6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+.item:nth-of-type(4n+4) {
+  transform: scale(0.8, 0.8) rotate(3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+4) .polaroid:before {
+  transform: rotate(4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:nth-of-type(4n+3) {
+  transform: scale(0.8, 0.8) rotate(-3deg);
+  transition: all 0.35s;
+}
+.item:nth-of-type(4n+3) .polaroid:before {
+  transform: rotate(-4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+.item:hover {
+  filter: none;
+  transform: scale(1, 1) rotate(0deg) !important;
+  transition: all 0.35s;
+}
+.item:hover .polaroid:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transform: rotate(0deg);
+  height: 90%;
+  width: 90%;
+  bottom: 0%;
+  right: 5%;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+  transition: all 0.35s;
 }
 

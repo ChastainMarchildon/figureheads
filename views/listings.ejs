@@ -3,12 +3,13 @@
     <%= title %>
     <% include partials/filter %>
   </h1>
+  <!--
   <div class="gradient">
   <div class="listings-title">
-
+    -->
   </div>
 </div>
-  
+  <div class="listings-container">
   <section class="content-section">
     <style scoped>
       section {
@@ -23,9 +24,26 @@
       }
     </style>
     <% for (let i = 0; i < listings.length; i++) { %>
-
+      <!--
+      <div class="item">
+        <div class="polaroid">
+          <div class="listing-details">Location: <%= listings[i].city %> <br>
+          Event Date: <%= listings[i].date %> <br>
+          Category: <%= listings[i].category %> <br>
+          <%= listings[i].description %> <br>
+          </div>
+          <div class="caption"><%= listings[i].title %> <br>
+            <% if (user && user.photographer == "Yes") { %>
+              <a href="/viewListing/<%= listings[i]._id %>" class="listing-link">View Full Listing</a>
+            <%}%>
+            <% if(!user) { %>
+              <a href="/subscribe" class="listing-link">View Full Listing</a>
+            <% } %>
+          </div>
+          </div>
+        </div>
+      -->
       <div class="card listing-card" style="width: 20rem;">
-       <!-- <img src="<%= listings[i].imageUrl %>" alt="Card example image" style="height:200px;"> -->
 
         <div class="card-body">
           <h4 class="card-title">
@@ -47,20 +65,24 @@
           <p class="card-text">
             <%= listings[i].description %>
           </p>
-          <!--
+        
           <p class="card-text">
             <%= listings[i].tags %>
           </p>
-          -->
+          
+        
           <% if (user && user.photographer == "Yes") { %>
             <a href="/viewListing/<%= listings[i]._id %>" class="listing-link">View Full Listing</a>
           <%}%>
           <% if(!user) { %>
             <a href="/subscribe" class="listing-link">View Full Listing</a>
           <% } %>
+          
         </div>
       </div>
-      </div>
+      
       <% } %>
+    </div>
+  </div>
   </section>
   <% include partials/footer %>
