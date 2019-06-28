@@ -5,6 +5,7 @@
   <% if (user && user.username == "support@fotio.ca") { %>
     <a href="/addBlog" class="button">Add Post</a>
   <% } %>
+  <div class="listings-container">
   <section class="content-section">
     <style scoped>
       section {
@@ -30,7 +31,8 @@
 
         </div>
       </div>
-      </div>
+    </div>
       <% } %>
   </section>
+</div>
   <% include partials/footer %>
