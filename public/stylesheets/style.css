@@ -6,6 +6,9 @@
 
 /*********************Navbar settings ****************************/
 
+a{
+  color:#ef1060;
+}
 
 a:hover{
   background: -webkit-gradient(linear,left top,right top,from(#b2f5fa),to(#baf0b8));
@@ -25,6 +28,15 @@ a:hover{
 .btn-link{
   font-family: 'Vollkorn SC', serif !important;
   font-size: 1rem;
+}
+
+#email{
+  background: #edf3ff !important;
+}
+
+.contactCard{
+  display:inline-block;
+  min-width:50vw;
 }
 
 
