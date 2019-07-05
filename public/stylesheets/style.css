@@ -7,7 +7,7 @@
 /*********************Navbar settings ****************************/
 
 a{
-  color:#ef1060;
+  color:#ef1060 !important;
 }
 
 a:hover{
