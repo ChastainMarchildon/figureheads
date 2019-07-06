@@ -2,8 +2,10 @@
 
   <h1>
     <%= title %>
+    <% include partials/filter %>
   </h1>
-  <% include partials/filter %>
+  
+  <div class="listings-container">
   <section class="content-section">
     <style scoped>
       section {
@@ -53,4 +55,5 @@
       </div>
       <% } %>
   </section>
+</div>
   <% include partials/footer %>

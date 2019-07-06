@@ -6,8 +6,7 @@
 
     <div class="container">
         <div class="columns">
-
-            <div class="card" style="width: 20rem;">
+            <div class="card" style="width: 100%;">
                 <div class="card-body">
                     <form method="POST" action="/addBlog">
                         <div class="form-group">
@@ -52,5 +51,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+            var quill = new Quill('#content', {
+              theme: 'snow'
+            });
+          </script>
 
     <% include partials/footer %>
