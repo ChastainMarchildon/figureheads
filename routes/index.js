@@ -34,9 +34,9 @@ router.post('/admin/edit/:id', listingController.updateListing);
 router.get('/add', authController.isLoggedIn, listingController.addListing);
 router.post('/add', authController.isLoggedIn, listingController.createListing);
 
+router.get('/chooseRegistry', userController.chooseRegistry);
 router.get('/register', userController.registerForm);
 router.post('/register', userController.register, authController.login);
-
 router.get('/gethired', userController.photoRegisterForm);
 router.post('/gethired', userController.registerPhotographer,userController.newUser, authController.login);
 

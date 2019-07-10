@@ -3,11 +3,16 @@
 <h1 class=" hero hero-bg-small">
     <%= title %>
 </h1>
-
+<% if(warning) { %>
+    <div class="row flex-spaces">
+        <div class="label label-error">
+            <%= warning %>
+        </div>
+<% } %>
     <div class="container">
         <div class="columns">
 
-            <div class="card" style="width: 20rem;">
+            <div class="card" style="width: 40rem;">
                 <div class="card-body">
                     <form method="POST" action="/add">
                         <div class="form-group">

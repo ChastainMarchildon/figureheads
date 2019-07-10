@@ -27,6 +27,7 @@ exports.addListing = (req, res) => {
   res.render('addListing', {
     title: 'Add Listing',
     user: req.user,
+    warning: ''
   });
 };
 
@@ -38,6 +39,11 @@ exports.createListing = async (req, res) => {
     res.redirect('/listings');
   } catch (err) {
     console.log(err);
+    res.render('addListing', {
+      title: 'Add Listing',
+      user: req.user,
+      warning: err
+    });
   }
 };
 

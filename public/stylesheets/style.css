@@ -125,7 +125,7 @@ h1{
   border-bottom-color: #ef1060;
 }
 
-/**********************************************************************   Header Titles  ******************************/
+/**********************************************************************  Container Backgrounds  ******************************/
 
 .btn-link{
   text-decoration:blue
@@ -153,6 +153,12 @@ h1{
 
 .view-listing-body{
   background-image: url('/images/view-listing.jpg') !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.choose-registry-container{
+  background-image: url('https://images.unsplash.com/photo-1490464986134-e746227b0a09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') !important;
   background-size: cover;
   background-position: center;
 }
@@ -220,7 +226,7 @@ label{
 
 
 #addListing{
-  position: fixed;
+  
   display: block;
   background-color: #339933
 }

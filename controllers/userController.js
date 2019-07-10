@@ -31,6 +31,14 @@ exports.registerForm = (req, res) => {
   });
 };
 
+exports.chooseRegistry = (req, res) => {
+  res.render('chooseRegistry', {
+    title: 'Select Your Type of Account',
+    warning: '',
+    user: req.user,
+  });
+};
+
 exports.subscribe = (req, res) => {
   res.render('subscribe', {
     title: 'Subscribe as a Photographer',
