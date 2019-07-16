@@ -116,22 +116,27 @@ h1{
 
 .contactCard{
   display:inline-block;
-  min-width:50vw;
+  min-width:45vw;
 }
 
 .card{
-  display:inherit;
-  /*************DARK
-  background-image: linear-gradient(rgb(35, 30, 51),rgb(38, 33, 56));
-  color:white;
-  */
+  display:inline-block;
   background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
   color:black;
+  max-width:40rem;
 }
 
 .card-footer{
   /*color:white;*/
   color:black;
+}
+
+.card-text{
+  max-width:75%;
+}
+
+.login-card{
+  min-wdht:50vw;
 }
 
 
