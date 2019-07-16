@@ -117,3 +117,12 @@ function homePageCarousel(){
      }, 3990);
 });
 }
+
+function hamburgerMenu() {
+  var x = document.getElementById("nav-section-2");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
