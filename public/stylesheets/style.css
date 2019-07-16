@@ -25,9 +25,12 @@ a:hover{
   border-bottom-color: #ef1060;
 }
 
+
+
 .btn-link{
   font-family: 'Vollkorn SC', serif !important;
   font-size: 1rem;
+  text-decoration:blue
 }
 
 #email{
@@ -105,10 +108,13 @@ h1{
   height:100%;
 }
 
+form{
+  padding:5px;
+}
+
 /*******************************************************Card css***********************************/
 
 .card-body{
-  max-width:40rem;
   align-items: center;
   border-bottom-style: solid;
   border-bottom-color: #ef1060;
@@ -136,7 +142,7 @@ h1{
 }
 
 .login-card{
-  min-wdht:50vw;
+  min-width:50vw;
 }
 
 
@@ -154,10 +160,6 @@ h1{
 }
 
 /**********************************************************************  Container Backgrounds  ******************************/
-
-.btn-link{
-  text-decoration:blue
-}
 
 .listings-title{
   height:150px;
