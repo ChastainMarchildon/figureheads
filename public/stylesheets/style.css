@@ -692,6 +692,7 @@ label{
   }
 
   .choose-registry-container{
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow:scroll;
   }
 }
