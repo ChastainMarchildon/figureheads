@@ -589,9 +589,12 @@ label{
   display: none;
 }
 
+.fa{
+  display:inline !important;
+}
 @media (min-width: 320px) and (max-width: 600px) {
 
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a {display: none;}
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
@@ -639,6 +642,10 @@ label{
 
   .home{
     padding-top:0px;
+  }
+
+  table{
+    table-layout: unset;
   }
 
 }
