@@ -690,4 +690,8 @@ label{
   .info-pane{
     font-size:12px;
   }
+
+  .choose-registry-container{
+    overflow:hidden;
+  }
 }
