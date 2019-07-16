@@ -592,6 +592,12 @@ label{
 .fa{
   display:inline !important;
 }
+
+#nav-section-2{
+  display:none;
+}
+
+
 @media (min-width: 320px) and (max-width: 600px) {
 
   .topnav a {display: none;}
@@ -645,7 +651,22 @@ label{
   }
 
   table{
-    table-layout: unset;
+    table-layout: unset !important;
+  }
+
+  .navbar-section-2{
+    display:none !important;
+  }
+
+  h1{
+    display:inherit;
+  }
+
+  #nav-section-2{
+    display:inherit;
+    align-self:center;
+    border-bottom-style: solid;
+    border-bottom-color: #ef1060;
   }
 
 }

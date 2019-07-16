@@ -40,30 +40,26 @@
             <img src="/images/light-nav-logo.png" class="colorTransform"/>
             </a>
         </div>
-
             <a href="/listings" class="btn btn-link text-dark">Listings</a>
             <!--<a href="/photographers" class="btn btn-link text-light">Our Photographers</a>  No point in using this right now --> 
             <!--<a href="/blogList" class="btn btn-link text-dark">Blog</a>-->
-
+     
             <% if (user) { %>
             <a href="/admin" class="btn btn-link text-dark">Your Account</a>
-            <% } %>
-            
-            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
-                    <i class="fa fa-bars"></i>
-            </a>         
-    </section>  
-        
-    <section class="navbar-section topnav" id="nav-section-2">
+            <% } %>  
+        </div>          
 
             <% if (!user) { %> 
                 <a href="/chooseRegistry" class="btn btn-link text-dark ">Register</a>    
                 <!--<a href="/subscribe" class="btn btn-link text-dark">Get Hired</a>   -->
                 <a href="/login" class="btn btn-link text-dark ">Login</a>
             <% } %>   
+
+            <!--
             <% if (user && user.photographer!="Yes") { %>
                  <a href="/viewprofile/<%= user._id %>" class="btn btn-link text-dark">Profile Settings</a>
             <% } %>
+            -->
 
         <% if (user) { %>
             <a href="/logout" class="btn btn-link text-dark">Logout</a>
@@ -72,5 +68,27 @@
             </span>
         <% } %>
        
-        </section> 
+    </section> 
+
+    <!-- Kind of broken mobile nav
+    <div class="navbar-section topnav" >
+        <div id="nav-section-2">
+            <% if (!user) { %> 
+                <a href="/chooseRegistry" class="btn btn-link text-dark ">Register</a>    
+                <a href="/login" class="btn btn-link text-dark ">Login</a>
+            <% } %>   
+
+            <% if (user) { %>
+                <a href="/logout" class="btn btn-link text-dark">Logout</a>
+                <span class="badge " style="float: right; max-height:fit-content; display:none;">
+                    <%= user.username %>
+                </span>
+            <% } %>
+        </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                    <i class="fa fa-bars"></i>
+            </a> 
+    </div>
+    -->
     </header>
