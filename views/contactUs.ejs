@@ -2,51 +2,44 @@
   <div class="container">
     <h1 class="brand">Contact Fotio</h1>
     <div class="wrapper animated bounceInLeft contactCard">
+         <div class="contact">
             <div class="columns">
-                    <div class="card contactCard" style="width: 20rem;" style="align-items:center;">
-                            <div class="card-body">
-                    <!--  Unnessecary ATM
-                    <h3>Our Info</h3>
-                    <ul>
-                    <li><i class="fa fa-road"></i> Brampton, ON, Canada</li>
-                    <li><i class="fa fa-phone"></i> (705)-279-1808</li>
-                    <li><i class="fa fa-envelope"></i>fotiosite@gmail.com</li>
-                    </ul>
-                    -->
+                <div class="card contactCard">
+                    <div class="card-body">
+                        <form method="POST" action="send">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
 
-                    <form method="POST" action="send">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
+                            <div class="form-group">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" name="company" class="form-input">
+                            </div>
 
-                        <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company" class="form-input">
-                        </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" id="phone" name="phone" class="form-input">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="text" id="phone" name="phone" class="form-input">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" class="form-input"></textarea>
-                        </div>
-               
-                        <button type="submit" class="button button-small">Submit</button>
-                    </p>
-                </form>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" class="form-input"></textarea>
+                            </div>
+                
+                            <button type="submit" class="button button-small">Submit</button>
+                        </p>
+                    </form>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
-</div>
 </body>
 </html>
 

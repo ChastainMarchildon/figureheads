@@ -57,7 +57,7 @@ function buildImageLink(url){
       var imageResource = myJson.resources[i];
       const src='https://res.cloudinary.com/dryhb9oao/image/upload/v1561217109/'+imageResource.public_id +'.'+imageResource.format
       if(i!=1){
-        $("section.content-section").append("<a href='" + src + "'><img class='card' style='width:550px; height:800px; display:inline-block;' src=" + src +'></a>');
+        $("section.content-section").append("<a href='" + src + "'><img class='card portfolioCard' src=" + src +'></a>');
       }
       else{
         var sheet = document.createElement('style')

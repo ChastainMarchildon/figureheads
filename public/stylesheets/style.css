@@ -7,7 +7,7 @@
 /*********************Navbar settings ****************************/
 
 a{
-  color:#ef1060 !important;
+  color:#ef1060;
 }
 
 a:hover{
@@ -469,6 +469,12 @@ label{
   line-height: 0% !important;
 }
 
+.portfolioCard{
+  width:550px; 
+  height:800px; 
+  display:inline-block;
+}
+
 
 /********************************************Polaroid Effect ***********************************************/
 
@@ -632,6 +638,10 @@ label{
     font-size: 16px;
   }
 
+  .contactCard{
+    width:100%;
+  }
+
   html{
     font-size: 16px;
     min-height:100%;
@@ -669,4 +679,15 @@ label{
     border-bottom-color: #ef1060;
   }
 
+  .columns{
+    display:block;
+  }
+
+  .portfolioCard{
+    max-width:90vw;
+  }
+
+  .info-pane{
+    font-size:12px;
+  }
 }
