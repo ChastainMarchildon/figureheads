@@ -70,6 +70,7 @@ html, body{
 
 
 footer{  
+  max-height:10vh;
   z-index: 1;
   margin-top:auto; 
   background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
@@ -695,4 +696,5 @@ label{
     overflow-x:hidden;
     overflow:scroll;
   }
+
 }
