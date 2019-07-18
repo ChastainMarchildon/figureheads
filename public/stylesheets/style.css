@@ -708,8 +708,8 @@ label{
     text-align:center;
   }
 
-  .menu{
-    align-content:left;
+  .dropdown .menu{
+    left:-60%;
   }
 
 }
