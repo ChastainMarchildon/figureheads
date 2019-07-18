@@ -126,7 +126,7 @@ exports.getCategories = (req, res) => {
       res.render('error');
     } else {
       res.render('categoryListings', {
-        title:'Results for ' + req.params.category,
+        title:req.params.category,
         listings,
         user: req.user,
       });
