@@ -697,4 +697,9 @@ label{
     overflow:scroll;
   }
 
+  .filterBar{
+    display: flex;
+    margin-left:2em;
+  }
+
 }
