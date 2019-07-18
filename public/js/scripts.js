@@ -11,11 +11,11 @@ function stripeCheckout(){
     // them to Checkout.
     stripe.redirectToCheckout({
       //LIVE
-      //items: [{plan: 'plan_F9BhYiaWCFKcsC', quantity: 1}],
+      items: [{plan: 'plan_F9BhYiaWCFKcsC', quantity: 1}],
 
 
       //TEST
-      items: [{plan: 'plan_F99sURKqZZKMVs', quantity: 1}],
+      //items: [{plan: 'plan_F99sURKqZZKMVs', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
