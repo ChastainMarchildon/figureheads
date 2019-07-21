@@ -119,7 +119,7 @@ form{
 
 .card-body{
   align-items: center;
-  
+
   max-height:345px;
   overflow:scroll;
 }
@@ -711,5 +711,5 @@ label{
   .dropdown .menu{
     left:-60%;
   }
-
+  
 }
