@@ -106,6 +106,8 @@ h1{
 
 .container{
   height:100%;
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
+  text-align:center;
 }
 
 form{
@@ -116,8 +118,9 @@ form{
 
 .card-body{
   align-items: center;
-  border-bottom-style: solid;
-  border-bottom-color: #ef1060;
+  
+  max-height:345px;
+  overflow:scroll;
 }
 
 .contactCard{
@@ -130,6 +133,8 @@ form{
   background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
   color:black;
   max-width:40rem;
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
 }
 
 .card-footer{
@@ -210,11 +215,6 @@ form{
 
 .info-pane{
   font-size: 25px;
-}
-
-.container{
-  background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
-  text-align:center;
 }
 
 .columns{
