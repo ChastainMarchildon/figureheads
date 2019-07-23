@@ -299,6 +299,11 @@ label{
   margin-left:5px;
 }
 
+.dropdown a{
+  left:0;
+  width:100%;
+}
+
 .listing-card{
   color:rgb(41, 38, 58);
   background:white;
