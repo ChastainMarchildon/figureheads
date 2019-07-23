@@ -711,5 +711,9 @@ label{
   .dropdown .menu{
     left:-60%;
   }
+
+  .btn-link{
+    font-size:inherit;
+  }
   
 }

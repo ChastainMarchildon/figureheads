@@ -22,6 +22,7 @@ router.get('/subscribe', userController.subscribe);
 
 router.get('/listings', listingController.getListings);
 router.get('/categoryListings/:category', listingController.getCategories);
+router.get('/viewlisting/:id', listingController.viewListing);
 
 //redirects the user to admin page based on what type of profile they have
 router.get('/admin', authController.isLoggedIn,(req, res, next) => {
@@ -46,7 +47,6 @@ router.post('/login', authController.login);
 router.get('/viewprofile/:id', userController.viewProfile);
 router.post('/viewprofile/:id', userController.updateProfile);
 
-router.get('/viewlisting/:id', listingController.viewListing);
 
 router.get('/blogList', listingController.getBlogList);
 router.get('/viewBlogPost/:id', listingController.viewBlogPost);
@@ -60,6 +60,7 @@ router.get('/photographers', userController.getPhotographers, userController.get
 router.get('/admin/editPhotographer/:id', userController.editPhotographer);
 router.post('/admin/editPhotographer/:id', userController.updatePhotographer);
 router.get('/portfolio/:id',userController.getPortfolio);
+router.get('/localPhotographers/:location', userController.getLocalPhotographers);
 
 router.get('/logout', (req, res) => {
   req.logout();

@@ -55,6 +55,7 @@ exports.registerPhotographer = (req, res, next) => {
     portfolioLink : req.body.portfolio, 
     photographer : req.body.photographer, 
     instagram : req.body.instagram,
+    location : req.body.location,
   });
 
   User.register(user,req.body.password, (err, account) => {
@@ -190,7 +191,22 @@ exports.newUser = (req,res,next) =>{
     title:'Fotio',
     user:req.user
   })
+  next();
 }
+
+exports.getLocalPhotographers = (req, res) => { 
+  User.find({location:req.params.location},(err,users) => {
+    if (err) {
+      res.render('error');
+    } else {
+      res.render('localPhotographers', {
+        title:'Photographers in ' + req.params.location,
+        users,
+        user: req.user,
+      });
+    }
+  })
+};
 
 
 /*****************************************************Portfolio Controls */

@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema({
     description:{
       type:String
     },
+    location:{
+      type:String,
+    },
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });
