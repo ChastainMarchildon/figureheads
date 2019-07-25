@@ -49,12 +49,17 @@
             <%= listings[i].tags %>
           </p>
           -->
+          <a href="/viewListing/<%= listings[i]._id %>" class="listing-link">View Full Listing</a>
+
+          <!--Removed for now until people will pay for it-->
+          <!--
           <% if (user && user.photographer == "Yes") { %>
             <a href="/viewListing/<%= listings[i]._id %>" class="listing-link">View Full Listing</a>
           <%}%>
           <% if(!user) { %>
             <a href="/subscribe" class="listing-link">View Full Listing</a>
           <% } %>
+          -->
           
         </div>
       </div>
