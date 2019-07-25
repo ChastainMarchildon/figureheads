@@ -13,11 +13,16 @@
                   <div class="card-body">
                         <div class="form-group">
                             <p>
-                                <a href="/admin/editPhotographer/<%= user._id %>" class="btn btn-primary" id="editPhotographer">Edit your Information</a>
-                              </p>
-                              <p>
-                                  <a href="portfolio/<%= user._id %>" class="btn btn-primary" id="portfolio">View your Portfolio</a>
-                                </p>
+                              <a href="/admin/editPhotographer/<%= user._id %>" class="btn btn-primary" id="editPhotographer">Edit your Information</a>
+                            </p>
+
+                            <p>
+                              <a href="portfolio/<%= user._id %>" class="btn btn-primary" id="portfolio">View your Portfolio</a>
+                            </p>
+
+                            <p>
+                              <a href="/featured" class="btn btn-primary" id="featured">Become a Featured Photographer</a>
+                            </p>
                         </div>
                           <button class="button" onclick="uploadArea('<%= user._id %>');">Upload to your Portfolio</button>
                           <!--

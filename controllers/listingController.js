@@ -9,6 +9,7 @@ exports.homePage = (req, res) => {
 };
 
 exports.getListings = (req, res) => {
+  const featuredUsers = User.find({featured:'Yes'});
   Listing.find().sort({date: -1}).exec((err, listings) => {
     if (err) {
       res.render('error');
@@ -17,8 +18,10 @@ exports.getListings = (req, res) => {
         title: 'All Listings',
         listings,
         user: req.user,
+        featuredUsers
       });
     }
+    console.log(featuredUsers);
   });
 };
 
@@ -129,6 +132,7 @@ exports.getCategories = (req, res) => {
         title:req.params.category,
         listings,
         user: req.user,
+        featuredUsers
       });
     }
   })

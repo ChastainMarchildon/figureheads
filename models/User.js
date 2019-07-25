@@ -28,10 +28,13 @@ const userSchema = new mongoose.Schema({
       type: String
     },
     description:{
-      type:String
+      type: String
     },
     location:{
-      type:String,
+      type: String
+    },
+    featured:{
+      type: String
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date

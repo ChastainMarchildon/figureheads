@@ -20,7 +20,7 @@ const router = express.Router();
 router.get('/', listingController.homePage);
 router.get('/subscribe', userController.subscribe);
 
-router.get('/listings', listingController.getListings);
+router.get('/listings', listingController.getListings, userController.getFeaturedPhotographers);
 router.get('/categoryListings/:category', listingController.getCategories);
 router.get('/viewlisting/:id', listingController.viewListing);
 
@@ -40,6 +40,7 @@ router.get('/register', userController.registerForm);
 router.post('/register', userController.register, authController.login);
 router.get('/gethired', userController.photoRegisterForm);
 router.post('/gethired', userController.registerPhotographer,userController.newUser, authController.login);
+router.get('/featured', userController.featured);
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);

@@ -208,6 +208,21 @@ exports.getLocalPhotographers = (req, res) => {
   })
 };
 
+exports.getFeaturedPhotographers = (req,res) => { 
+  User.find({featured:'Yes'},(err,featuredUsers) => {
+    res.send({
+      featuredUsers
+    })
+  })
+};
+
+exports.featured = (req,res) => {
+  res.render('featured',{
+    title:'Become a Featured Photographer',
+    user:req.user
+  });
+};
+
 
 /*****************************************************Portfolio Controls */
 /**Uses cloudinary image link list to generate a json list of images uploaded wioth a users id as a tag */
