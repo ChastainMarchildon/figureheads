@@ -6,6 +6,7 @@
         <%= title %>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.8/spectre.min.css'/>
     <link rel='stylesheet' type="text/css" href='/stylesheets/style.css'/>
     <link rel='stylesheet' type="text/css" href='https://css-tricks.com/wp-content/themes/CSS-Tricks-17/style.css?v=10.5'/>
@@ -51,7 +52,6 @@
 
             <% if (!user) { %> 
                 <a href="/chooseRegistry" class="btn btn-link text-dark ">Register</a>    
-                <!--<a href="/subscribe" class="btn btn-link text-dark">Get Hired</a>   -->
                 <a href="/login" class="btn btn-link text-dark ">Login</a>
             <% } %>   
 
@@ -67,28 +67,7 @@
                 <%= user.username %>
             </span>
         <% } %>
+        <a href="/about" class="btn btn-link text-dark">About Us</a>
        
     </section> 
-
-    <!-- Kind of broken mobile nav
-    <div class="navbar-section topnav" >
-        <div id="nav-section-2">
-            <% if (!user) { %> 
-                <a href="/chooseRegistry" class="btn btn-link text-dark ">Register</a>    
-                <a href="/login" class="btn btn-link text-dark ">Login</a>
-            <% } %>   
-
-            <% if (user) { %>
-                <a href="/logout" class="btn btn-link text-dark">Logout</a>
-                <span class="badge " style="float: right; max-height:fit-content; display:none;">
-                    <%= user.username %>
-                </span>
-            <% } %>
-        </div>
-
-            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
-                    <i class="fa fa-bars"></i>
-            </a> 
-    </div>
-    -->
     </header>

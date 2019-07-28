@@ -8,6 +8,10 @@ exports.homePage = (req, res) => {
   res.render('index', { title: 'Home', user: req.user });
 };
 
+exports.getAboutUs = (req, res) => {
+  res.render('about', { title: 'About Fotio', user: req.user });
+};
+
 exports.getListings = (req, res) => {
   const featuredUsers = User.find({featured:'Yes'});
   Listing.find().sort({date: -1}).exec((err, listings) => {

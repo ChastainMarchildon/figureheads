@@ -10,6 +10,11 @@ html a{
   color:#ef1060;
 }
 
+p{
+  font-family: 'Antic Slab', serif;
+  font-size:24px;
+}
+
 a:hover{
   background: -webkit-gradient(linear,left top,right top,from(#b2f5fa),to(#baf0b8));
   background: linear-gradient(to right,#ef1060,#f8b5e2) !important;
@@ -409,6 +414,8 @@ label{
   */
   background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(236, 236, 236));
   color:black;
+  border-bottom-style: solid;
+  border-bottom-color: #ef1060;
 }
 
 
