@@ -132,7 +132,6 @@ exports.getCategories = (req, res) => {
         title:req.params.category,
         listings,
         user: req.user,
-        featuredUsers
       });
     }
   })

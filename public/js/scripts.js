@@ -126,3 +126,8 @@ function hamburgerMenu() {
     x.className = "topnav";
   }
 }
+
+function getFeatured(){
+  var carosel = document.getElementById("carosel")
+  
+}
