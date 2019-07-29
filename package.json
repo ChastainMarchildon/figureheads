@@ -20,6 +20,7 @@
     "express": "^4.16.4",
     "express-flash": "0.0.2",
     "express-session": "1.15.6",
+    "express-sslify": "^1.2.0",
     "fs": "0.0.1-security",
     "gridfs": "^1.0.0",
     "http-errors": "~1.7.2",

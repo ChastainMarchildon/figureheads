@@ -7,6 +7,7 @@ const logger = require('morgan');
 require('dotenv').config({ path: 'variables.env' });
 const bodyParser = require('body-parser');
 const cloudinary = require('cloudinary').v2;
+var enforce = require('express-sslify');
 
 const passport = require('passport');
 const session = require('express-session');
@@ -16,15 +17,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 const mongoose = require('mongoose');
 
-/*
-const esClient = new elasticsearch.Client({
-  host: '127.0.0.1:9200',
-  log: 'error'
-});
-*/
 
 mongoose.connect('mongodb://Chastain:ed210a@ds151970.mlab.com:51970/node1');
 
